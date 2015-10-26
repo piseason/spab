@@ -1,0 +1,53 @@
+#contain{
+	width:950px;
+	height:470px;
+	background-color:pink;
+	 padding:10px;
+	
+}
+#info{
+	width:40%;
+	height:100%;
+	float:left;
+}
+
+#info li{
+
+	margin-top:5px;
+}
+
+#info input{
+	height:28px;
+}
+
+#agenda{
+	width:60%;
+	height:100%;
+	float:left;
+	text-align: center;
+}
+
+#agenda table{
+	width:100%;
+	height:400px;
+}
+
+#agenda tr{
+	width:100%;
+	height:50px;
+}
+
+#agenda td{
+	width:65px;
+	height:80px;
+	text-align: center;
+
+}
+
+#agenda td:hover{
+	transition: all 0.30s ease-in-out;
+	-webkit-box-shadow:0px 0px 20px #ff00ff ;	/*for chrome,safari*/
+	box-shadow:0px 0px 20px #ff00ff;			/*for opero, IE9+  %% IE6不支持阴影*/
+	-moz-box-shadow:0px 0px 20px #ff00ff;
+}
+

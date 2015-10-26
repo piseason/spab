@@ -1,0 +1,33 @@
+#logo {
+	background: url(../images/logo.gif) left center no-repeat;
+	width:100%;
+	height:110px;
+}
+
+#logo .TEL {
+    float: left;
+    width: 100%;
+    text-align: right;
+    color: #FFF;
+    padding-top: 15px;
+}
+
+#logo .TEL font {
+    color: #ffa800;
+    margin-left: 10px;
+}
+
+.control{
+	margin-top: 40px;
+	text-align: center;
+}
+
+.control button{
+	color:#000;
+	border:0; 
+	width:15%;
+	background-color:rgba(229,100,25,0.7);
+	 font-size:20px;
+	  padding:5px;
+	  font-family: Microsoft YaHei;
+}

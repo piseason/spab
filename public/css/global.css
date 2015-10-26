@@ -1,0 +1,39 @@
+html{
+    padding:0px;
+    margin:0px;
+    font-size:12px;
+    font-family:'Microsoft YaHei';
+    font-weight:lighter;
+}
+
+body{
+    margin:0 auto;
+    width:950px;
+    height:100%;  
+   /*background-color:#bae3d7;*/
+    background-image:url(../images/bg_images.jpg);
+	-moz-background-size: 100% 100%; /*  Firefox 3.6 */
+    -o-background-size: 100% 100%;/* Opera 9.5 */
+   -webkit-background-size: 100% 100%;/* Safari 3.0 */
+    background-size: 100% 100%;/*  Firefox 4.0 and other CSS3-compliant browsers */
+    background-attachment:fixed;   
+}
+
+.messagecarrier{
+    width:950px;
+    height:650px;
+    position:absolute;
+    display:none;
+}
+
+.message{
+    width:300px;
+    height:250px;
+    margin:0 auto;
+    background-color:white;
+    margin-top:250px;
+    text-align: center;
+    -webkit-box-shadow:0px 0px 20px #ff00ff ;   /*for chrome,safari*/
+    box-shadow:0px 0px 20px #ff00ff;            /*for opero, IE9+  %% IE6不支持阴影*/
+    -moz-box-shadow:0px 0px 20px #ff00ff;
+}
