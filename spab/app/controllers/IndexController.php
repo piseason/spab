@@ -28,9 +28,52 @@ class IndexController extends ControllerBase
         if(!$auth){
             $this->response->redirect("http://".$localurl.":5001");
         }
+
+        $appointments=Appointments::find(array(
+                "appliantid=?1",
+                "bind"=>array(1=>$auth['uid'])
+            ));
+
+        
+        $flag=true;
+        foreach ($appointments as $appointment) {
+            # code...
+            $time=time();
+            $time=strtotime("tomorrow",$time);
+            $date=getdate($time);
+            $target_month=intval($date['mon']);
+            $target_day=intval($date['day']);
+           
+
+            
+            $time=$appointment->time;
+
+            $months=explode("月", $time);
+            $month=intval($months[0]);
+
+            if($month>$target_month){
+                $flag=false;
+            }else if($month==$target_month){
+
+                $day=explode("日", $months[1])[0];
+                $day=intval($day);
+
+                if($day>=$target_day){
+                    $flag=false;
+                }
+            }
+        
+            if(!$flag){
+                $this->response->redirect("http://".$localurl.":5000/index/error");
+            }
+
+        }
+
         $this->view->setVar("uid",$auth['uid']);
         $this->view->setVar("applyname",$auth['displayName']);
-  	
+    }
+
+    public function errorAction(){
 
     }
 

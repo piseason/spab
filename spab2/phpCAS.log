@@ -3665,3 +3665,166 @@ C879 .<= true
 9F6C .|    |    user is authenticated [Client.php:1137]
 9F6C .|    <= true
 9F6C .<= true
+AEAF .START phpCAS-1.3.0RC1+ ****************** [CAS.php:450]
+AEAF .=> phpCAS::client('2.0', 'sso.buaa.edu.cn', 443, '') [index.php:10]
+AEAF .|    => CAS_Client::__construct('2.0', false, 'sso.buaa.edu.cn', 443, '', true) [CAS.php:347]
+AEAF .|    |    Starting a new session [Client.php:797]
+AEAF .|    <= ''
+AEAF .<= ''
+AEAF .=> phpCAS::setNoCasServerValidation() [index.php:11]
+AEAF .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1663]
+AEAF .<= ''
+AEAF .=> phpCAS::forceAuthentication() [index.php:12]
+AEAF .|    => CAS_Client::forceAuthentication() [CAS.php:1100]
+AEAF .|    |    => CAS_Client::isAuthenticated() [Client.php:1088]
+AEAF .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1192]
+AEAF .|    |    |    |    no user found [Client.php:1378]
+AEAF .|    |    |    <= false
+AEAF .|    |    |    no ticket found [Client.php:1261]
+AEAF .|    |    <= false
+AEAF .|    |    => CAS_Client::redirectToCas(false) [Client.php:1097]
+AEAF .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1399]
+AEAF .|    |    |    |    => CAS_Client::getURL() [Client.php:326]
+AEAF .|    |    |    |    |    Final URI: http://localhost:5001/ [Client.php:3066]
+AEAF .|    |    |    |    <= 'http://localhost:5001/'
+AEAF .|    |    |    <= 'https://sso.buaa.edu.cn/login?service=http%3A%2F%2Flocalhost%3A5001%2F'
+AEAF .|    |    |    Redirect to : https://sso.buaa.edu.cn/login?service=http%3A%2F%2Flocalhost%3A5001%2F [Client.php:1405]
+AEAF .|    |    |    exit()
+AEAF .|    |    |    -
+AEAF .|    |    -
+AEAF .|    -
+3CBF .START phpCAS-1.3.0RC1+ ****************** [CAS.php:450]
+3CBF .=> phpCAS::client('2.0', 'sso.buaa.edu.cn', 443, '') [index.php:10]
+3CBF .|    => CAS_Client::__construct('2.0', false, 'sso.buaa.edu.cn', 443, '', true) [CAS.php:347]
+3CBF .|    |    Starting a new session [Client.php:797]
+3CBF .|    |    Ticket 'ST-464459-sWgQsBLdrkHaSuYZojuu-cas' found [Client.php:875]
+3CBF .|    <= ''
+3CBF .<= ''
+3CBF .=> phpCAS::setNoCasServerValidation() [index.php:11]
+3CBF .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1663]
+3CBF .<= ''
+3CBF .=> phpCAS::forceAuthentication() [index.php:12]
+3CBF .|    => CAS_Client::forceAuthentication() [CAS.php:1100]
+3CBF .|    |    => CAS_Client::isAuthenticated() [Client.php:1088]
+3CBF .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1192]
+3CBF .|    |    |    |    no user found [Client.php:1378]
+3CBF .|    |    |    <= false
+3CBF .|    |    |    CAS 2.0 ticket `ST-464459-sWgQsBLdrkHaSuYZojuu-cas' is present [Client.php:1226]
+3CBF .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1227]
+3CBF .|    |    |    |     [Client.php:2742]
+3CBF .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2748]
+3CBF .|    |    |    |    |    => CAS_Client::getURL() [Client.php:415]
+3CBF .|    |    |    |    |    |    Final URI: http://localhost:5001/ [Client.php:3066]
+3CBF .|    |    |    |    |    <= 'http://localhost:5001/'
+3CBF .|    |    |    |    <= 'https://sso.buaa.edu.cn/serviceValidate?service=http%3A%2F%2Flocalhost%3A5001%2F'
+3CBF .|    |    |    |    => CAS_Client::_readURL('https://sso.buaa.edu.cn/serviceValidate?service=http%3A%2F%2Flocalhost%3A5001%2F&ticket=ST-464459-sWgQsBLdrkHaSuYZojuu-cas', NULL, NULL, NULL) [Client.php:2757]
+3CBF .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:218]
+3CBF .|    |    |    |    |    |    Response Body: 
+3CBF .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+3CBF .|    |    |    |    |    |    	<cas:authenticationSuccess>
+3CBF .|    |    |    |    |    |    		<cas:user>12151042</cas:user>
+3CBF .|    |    |    |    |    |    			<cas:attributes>
+3CBF .|    |    |    |    |    |    
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:employeeType>1</cas:employeeType>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:uid>12151042</cas:uid>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:mail></cas:mail>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:sn>吴晓杰</cas:sn>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:eduPersonPrimaryAffiliation>student</cas:eduPersonPrimaryAffiliation>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:cn>吴晓杰</cas:cn>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:departmentNumber>011500</cas:departmentNumber>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:userPassword>[B@12438ccb</cas:userPassword>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:displayName>吴晓杰</cas:displayName>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:employeeNumber>12151042</cas:employeeNumber>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |            <cas:xjtuGender>1</cas:xjtuGender>
+3CBF .|    |    |    |    |    |        
+3CBF .|    |    |    |    |    |    
+3CBF .|    |    |    |    |    |    </cas:attributes>
+3CBF .|    |    |    |    |    |    
+3CBF .|    |    |    |    |    |    			
+3CBF .|    |    |    |    |    |    		
+3CBF .|    |    |    |    |    |    
+3CBF .|    |    |    |    |    |    
+3CBF .|    |    |    |    |    |    	</cas:authenticationSuccess>
+3CBF .|    |    |    |    |    |    </cas:serviceResponse>
+3CBF .|    |    |    |    |    |    
+3CBF .|    |    |    |    |    |     [CurlRequest.php:82]
+3CBF .|    |    |    |    |    <= true
+3CBF .|    |    |    |    <= true
+3CBF .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2808]
+3CBF .|    |    |    |    |    Found nested jasig style attributes [Client.php:2893]
+3CBF .|    |    |    |    |    Attribute [employeeType] = 1 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [uid] = 12151042 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [mail] =  [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [sn] = 吴晓杰 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [eduPersonPrimaryAffiliation] = student [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [cn] = 吴晓杰 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [departmentNumber] = 011500 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [userPassword] = [B@12438ccb [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [displayName] = 吴晓杰 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [employeeNumber] = 12151042 [Client.php:2897]
+3CBF .|    |    |    |    |    Attribute [xjtuGender] = 1 [Client.php:2897]
+3CBF .|    |    |    |    <= ''
+3CBF .|    |    |    |    Storing Proxy List [Client.php:2817]
+3CBF .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2820]
+3CBF .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+3CBF .|    |    |    |    <= true
+3CBF .|    |    |    |    => CAS_Client::_renameSession('ST-464459-sWgQsBLdrkHaSuYZojuu-cas') [Client.php:2851]
+3CBF .|    |    |    |    |    Session ID: ST-464459-sWgQsBLdrkHaSuYZojuu-cas [Client.php:3169]
+3CBF .|    |    |    |    |    Restoring old session vars [Client.php:3172]
+3CBF .|    |    |    |    <= ''
+3CBF .|    |    |    <= true
+3CBF .|    |    |    CAS 2.0 ticket `ST-464459-sWgQsBLdrkHaSuYZojuu-cas' was validated [Client.php:1228]
+3CBF .|    |    |    => CAS_Client::getURL() [Client.php:1282]
+3CBF .|    |    |    <= 'http://localhost:5001/'
+3CBF .|    |    |    Prepare redirect to : http://localhost:5001/ [Client.php:1282]
+3CBF .|    |    |    => CAS_Client::getURL() [Client.php:1283]
+3CBF .|    |    |    <= 'http://localhost:5001/'
+3CBF .|    |    |    exit()
+3CBF .|    |    |    -
+3CBF .|    |    -
+3CBF .|    -
+0E17 .START phpCAS-1.3.0RC1+ ****************** [CAS.php:450]
+0E17 .=> phpCAS::client('2.0', 'sso.buaa.edu.cn', 443, '') [index.php:10]
+0E17 .|    => CAS_Client::__construct('2.0', false, 'sso.buaa.edu.cn', 443, '', true) [CAS.php:347]
+0E17 .|    |    Starting a new session [Client.php:797]
+0E17 .|    <= ''
+0E17 .<= ''
+0E17 .=> phpCAS::setNoCasServerValidation() [index.php:11]
+0E17 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1663]
+0E17 .<= ''
+0E17 .=> phpCAS::forceAuthentication() [index.php:12]
+0E17 .|    => CAS_Client::forceAuthentication() [CAS.php:1100]
+0E17 .|    |    => CAS_Client::isAuthenticated() [Client.php:1088]
+0E17 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1192]
+0E17 .|    |    |    |    user = `12151042' [Client.php:1368]
+0E17 .|    |    |    <= true
+0E17 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1209]
+0E17 .|    |    <= true
+0E17 .|    |    no need to authenticate [Client.php:1090]
+0E17 .|    <= true
+0E17 .<= ''
+0E17 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1298]
+0E17 .|    Not a logout request [Client.php:1473]
+0E17 .<= ''
+0E17 .=> phpCAS::checkAuthentication() [index.php:14]
+0E17 .|    => CAS_Client::checkAuthentication() [CAS.php:1077]
+0E17 .|    |    => CAS_Client::isAuthenticated() [Client.php:1136]
+0E17 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1192]
+0E17 .|    |    |    |    user = `12151042' [Client.php:1368]
+0E17 .|    |    |    <= true
+0E17 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1209]
+0E17 .|    |    <= true
+0E17 .|    |    user is authenticated [Client.php:1137]
+0E17 .|    <= true
+0E17 .<= true

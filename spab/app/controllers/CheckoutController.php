@@ -57,7 +57,7 @@ class CheckoutController extends ControllerBase{
 		$applycode=$this->request->getPost("applycode","string");
 
 		$appointment=Appointments::findFirst(array(
-			"applycode=?1",
+			"appliantid=?1 order by id desc",
 			"bind"=>array(1=>$applycode)
 			));
 		if($appointment){

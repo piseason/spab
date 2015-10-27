@@ -4,16 +4,16 @@
 	<div id="info">
 		<ul style="margin-top:10px;">
 			<li>
-			部门(学院+班号)：<input class='form-control' type="text" id="department" style="width:200px;display:inline-block;"   />
+			部门(学院+班号)：<input class='form-control' type="text" id="department" style="width:200px;display:inline-block;"  " />
 			</li>
 			<li>
 			参观人数：<input class='form-control' type="text" id="number" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
-			申请人姓名：<input class='form-control' readonly="true" type="text" id="appliantname" style="width:200px;display:inline-block;" value="{{applyname}}" />
+			申请人姓名：<input class='form-control' readonly="true" type="text" id="appliantname" style="width:200px;display:inline-block;" value="<?php echo $applyname; ?>" />
 			</li>
 			<li>
-			申请人证件号：<input class='form-control' readonly="true" type="text" id="appliantid" style="width:200px;display:inline-block;" value="{{uid}}" />
+			申请人证件号：<input class='form-control' readonly="true" type="text" id="appliantid" style="width:200px;display:inline-block;" value="<?php echo $uid; ?>" />
 			</li>
 			<li>
 			负责人：<input class='form-control' type="text" id="incharge" style="width:200px;display:inline-block;" />
