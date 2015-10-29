@@ -6,6 +6,9 @@ class IndexController extends ControllerBase
 	public function initialize()
 	{
         $this->view->setTemplateAfter('ace');
+
+        $info=$this->tidyTable();
+        $this->view->setVar("info",$info);
 		//parent::initialize();
 		//Phalcon\Tag::setTitle('主页');
 		//$this->view->setTemplateAfter('base');
@@ -20,8 +23,6 @@ class IndexController extends ControllerBase
         $this->session->remove("sa");
     }
 
-
-
     public function applyAction(){
         $localurl="localhost";
         $auth=$this->session->get("auth");
@@ -29,46 +30,11 @@ class IndexController extends ControllerBase
             $this->response->redirect("http://".$localurl.":5001");
         }
 
-        $appointments=Appointments::find(array(
-                "appliantid=?1",
-                "bind"=>array(1=>$auth['uid'])
-            ));
-
-        
-        $flag=true;
-        foreach ($appointments as $appointment) {
-            # code...
-            $time=time();
-            $time=strtotime("tomorrow",$time);
-            $date=getdate($time);
-            $target_month=intval($date['mon']);
-            $target_day=intval($date['day']);
-           
-
-            
-            $time=$appointment->time;
-
-            $months=explode("月", $time);
-            $month=intval($months[0]);
-
-            if($month>$target_month){
-                $flag=false;
-            }else if($month==$target_month){
-
-                $day=explode("日", $months[1])[0];
-                $day=intval($day);
-
-                if($day>=$target_day){
-                    $flag=false;
-                }
-            }
+        $flag=$this->checkreserved($auth['uid']);
         
             if(!$flag){
                 $this->response->redirect("http://".$localurl.":5000/index/error");
             }
-
-        }
-
         $this->view->setVar("uid",$auth['uid']);
         $this->view->setVar("applyname",$auth['displayName']);
     }
@@ -78,6 +44,18 @@ class IndexController extends ControllerBase
     }
 
     public function postdataAction(){
+        $auth=$this->session->get("auth");
+        if(!$auth){
+            $this->dataReturn(array('error'=>true));
+            return;
+        }
+
+        $flag=$this->checkreserved($auth['uid']);
+        if(!$flag){
+            $this->dataReturn(array('error'=>true));
+            return;
+        }
+
         date_default_timezone_set('Asia/Shanghai'); 
         $this->view->disable();
         $department=$this->request->getPost("department","string");
@@ -113,6 +91,21 @@ class IndexController extends ControllerBase
 
     }
 
+    public function checkreserved($uid){
+        $appointments=Appointments::find(array(
+                "appliantid=?1",
+                "bind"=>array(1=>$uid)
+            ));
+
+        
+        $flag=true;
+        foreach ($appointments as $appointment) {
+            # code...
+            //如果存在一条未过期的预约，那么认为该用户是有预约的
+            if(!$appointment->checkexpired()) $flag=false;
+        }
+            return $flag;
+}
 
     public function gettimeAction(){
         $this->view->disable();
@@ -237,6 +230,65 @@ class IndexController extends ControllerBase
 
     }
 	
+    private function tidyTable(){
+        $this->db->begin();
+        $appointments=Appointments::Find();
+        foreach ($appointments as $appointment) {
+            # code...
+
+            if($appointment->checkexpired()){
+                $expiredappointment=new Expiredappointments();
+                $expiredappointment->department=$appointment->department;
+                $expiredappointment->number=$appointment->number;
+                $expiredappointment->appliantname=$appointment->appliantname;
+                $expiredappointment->appliantid=$appointment->appliantid;
+                $expiredappointment->incharge=$appointment->incharge;
+                $expiredappointment->time=$appointment->time;
+                $expiredappointment->state=$appointment->state;
+                $expiredappointment->applycode=$appointment->applycode;
+                $expiredappointment->other=$appointment->other;
+                $expiredappointment->telephone=$appointment->telephone;
+                $expiredappointment->signuptime=$appointment->signuptime;
+                try{
+                    
+                    $expiredappointment->save();
+                    $appointment->delete();
+                }catch( Exception $e){
+                    $this->db->rollback();
+                    break;
+                }
+            }
+        }
+        $deniedappointments=Deniedappointments::Find();
+
+            foreach ($deniedappointments as $appointment) {
+            # code...
+            if($deniedappointments->checkexpired()){
+                
+                $expiredappointment=new Expiredappointments();
+                $expiredappointment->department=$appointment->department;
+                $expiredappointment->number=$appointment->number;
+                $expiredappointment->appliantname=$appointment->appliantname;
+                $expiredappointment->appliantid=$appointment->appliantid;
+                $expiredappointment->incharge=$appointment->incharge;
+                $expiredappointment->time=$appointment->time;
+                $expiredappointment->state=$appointment->state;
+                $expiredappointment->applycode=$appointment->applycode;
+                $expiredappointment->other=$appointment->other;
+                $expiredappointment->telephone=$appointment->telephone;
+                $expiredappointment->signuptime=$appointment->signuptime; 
+                try{
+                    $expiredappointment->save();
+                    $appointment->delete();
+                }catch( Exception $e){
+                    $this->db->rollback();
+                    break;
+                }
+            }
+        }
+        $this->db->commit();
+    }
+
 	function turnname($name){
 		$temp=array();
 		for ($i=1;$i < sizeof($name)+1; $i++) { 

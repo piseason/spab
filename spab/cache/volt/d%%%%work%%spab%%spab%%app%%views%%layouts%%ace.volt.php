@@ -29,6 +29,7 @@
 	<script type="text/javascript">
 
 	$("document").ready(function(){
+		$("#message").children("button").unbind("click");
 		$("#message").children("button").click(function(){
 			$("#messagecarrier").slideUp();
 		});

@@ -79,4 +79,30 @@ class Deniedappointments extends \Phalcon\Mvc\Model
         return $deniedappointment;
     }
 
+     public function checkexpired(){
+            $time=time();
+            $time=strtotime("tomorrow",$time);
+            $date=getdate($time);
+            $target_month=intval($date['mon']);
+            $target_day=intval($date['mday']);
+
+            $time=$this->time;
+
+            $months=explode("月", $time);
+            $month=intval($months[0]);
+            $flag=true;
+            if($month>$target_month){
+                $flag=false;
+            }else if($month==$target_month){
+
+                $day=explode("日", $months[1])[0];
+                $day=intval($day);
+
+                if($day>=$target_day){
+                    $flag=false;
+                }
+            }
+            return flag;
+    }
+
 }

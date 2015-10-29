@@ -71,7 +71,8 @@ class CheckoutController extends ControllerBase{
 			if($appointment){
 				$this->session->set("appointment",$appointment);
 				$this->dataReturn(array("url"=>"/checkout/access"));
-			}else{$this->dataReturn(array("error"=>"您输入的申请码无效,请重新输入或联系管理员(8231 7766)"));}
+			}else{
+        		$this->dataReturn(array("error"=>"您输入的申请码无效,请重新输入或联系管理员(8231 7766)"));}
 			
 		}
 	}

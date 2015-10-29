@@ -4,7 +4,7 @@
 	<div id="info">
 		<ul style="margin-top:10px;">
 			<li>
-			部门(学院+班号)：<input class='form-control' type="text" id="department" style="width:200px;display:inline-block;"  " />
+			部门(学院+班号)：<input class='form-control' type="text" id="department" style="width:200px;display:inline-block;"   />
 			</li>
 			<li>
 			参观人数：<input class='form-control' type="text" id="number" style="width:200px;display:inline-block;" />
@@ -134,7 +134,6 @@ function initTable(data){
 function Leo_submit(){
 	if(Leo_checkinput()){
 
-
 		var inputdata={
 			"department":$("#department").val(),
 			"number":$("#number").val(),
@@ -149,13 +148,20 @@ function Leo_submit(){
 		
 		$.post("/index/postdata",inputdata,function(data){
 				if(data.error){
-					leomessage("提交失败,请刷新重试!");
+					leomessage("提交失败,请刷新重试!如果您的统一认证有误，请联系管理员:82317766");
+					$("#message").children("button").click(function(){
+						window.location.href="/";
+					});
+					
 				}else{
 					leomessage("提交成功!<br/>请牢记您的查询码！！！<br/>"+data.applycode);
-					$.post("/index/gettime",function(data){
-						initTable(data);
-						$("#time").prop("value","请点击右侧空白时段输入");
+					$("#message").children("button").click(function(){
+						window.location.href="/";
 					});
+					// $.post("/index/gettime",function(data){
+					// 	initTable(data);
+					// 	$("#time").prop("value","请点击右侧空白时段输入");
+					// });
 				}
 		});
 	}else{
