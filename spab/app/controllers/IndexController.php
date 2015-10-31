@@ -24,7 +24,7 @@ class IndexController extends ControllerBase
     }
 
     public function applyAction(){
-        $localurl="localhost";
+        $localurl="10.254.20.50";
         $auth=$this->session->get("auth");
         if(!$auth){
             $this->response->redirect("http://".$localurl.":5001");

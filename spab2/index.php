@@ -1,6 +1,6 @@
 <?php
 
-$localurl="localhost";
+$localurl="10.254.20.50";
 
 
 
