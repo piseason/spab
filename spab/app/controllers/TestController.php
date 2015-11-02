@@ -56,7 +56,7 @@ class TestController extends ControllerBase{
         }
         //写入星期与日期
         $tem=$time;
-        // $index=array();
+         $index=array();
          for ($i=0; $i <7 ; $i++) { 
              $datetem=getdate($tem);
              $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
