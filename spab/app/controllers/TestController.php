@@ -85,7 +85,13 @@ class TestController extends ControllerBase{
                 default : $hour="7"; 
             }
             
-            $objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
+            $str="部门:".$appointment->department."\r\n";
+            $str.="申请人:".$appointment->appliantname."\r\n";
+            $str.="联系方式:".$appointment->telephone."\r\n";
+            $str.="参观人数:".$appointment->number."\r\n";
+            $str.="讲解员:";
+
+            $objActSheet->setCellValue($index[$mon."|".$day].$hour,$str);
 
         }
 
