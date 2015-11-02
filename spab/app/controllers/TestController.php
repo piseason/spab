@@ -14,7 +14,8 @@ class TestController extends ControllerBase{
 	public function indexAction(){
 		$this->view->disable();
 		$Sheets =PHPExcel_IOFactory::load("schedule.xls");
-		 $dataArray = $Sheets->getSheet(0)->toArray(); 
+		 $dataArray = $Sheets->getSheet(0)->toArray();
+		 echo "ok";
 		 echo $dataArray[1][1];
 		 
 	}
