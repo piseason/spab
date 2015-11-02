@@ -71,6 +71,7 @@ class TestController extends ControllerBase{
             $time=$appointment->time;
 
             $time=explode("月",$time);
+            echo $time[0];
             $mon=$time[0];
             $time=explode("日",$time[1]);
             $day=$time[0];
@@ -85,7 +86,7 @@ class TestController extends ControllerBase{
                 case '16': $hour="6";break;
                 default : $hour="7"; 
             }
-            echo $mon;
+            
             //$objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
 
         }
