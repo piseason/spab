@@ -14,27 +14,18 @@ class TestController extends ControllerBase{
 	public function indexAction(){
 		$objPHPExcel = new PHPExcel();
         $objActSheet = $objPHPExcel->getActiveSheet();
-        $objPHPExcel->getProperties()->setTitle('测试人员excel');
-        $objPHPExcel->getProperties()->setSubject('测试人员excel');
+        $objPHPExcel->getProperties()->setTitle('北航安全体验馆未来一周安排表');
+        $objPHPExcel->getProperties()->setSubject('北航安全体验馆未来一周安排表');
         /**
          * 设置单元格的值
          */
-        $objActSheet->setCellValue('A1','用户名');
-        $objActSheet->setCellValue('B1','密码');
-        $objActSheet->setCellValue('C1','姓名');
-        $objActSheet->setCellValue('D1','性别');
-        $objActSheet->setCellValue('E1','籍贯');
-        $objActSheet->setCellValue('F1','学历');
-        $objActSheet->setCellValue('G1','学位');
-        $objActSheet->setCellValue('H1','出生日期');
-        $objActSheet->setCellValue('I1','政治面貌');
-        $objActSheet->setCellValue('J1','职称');
-        $objActSheet->setCellValue('K1','班子/系统');
-        $objActSheet->setCellValue('L1','工作单位');
-        $objActSheet->setCellValue('M1','部门');
-        $objActSheet->setCellValue('N1','职务');
-        $objActSheet->setCellValue('O1','教育经历');
-        $objActSheet->setCellValue('P1','工作经历');
+        $objActSheet->mergeCells('A1:I1');
+        $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表()');
+        $objActSheet->mergeCells('A2:B2');
+        $objActSheet->mergeCells('A3:A4');
+        $objActSheet->mergeCells('A5:A6');
+        $objActSheet->setCellValue('A3','上午');
+        $objActSheet->setCellValue('A5','下午');
         //将测试人员信息导入到表中
         
         $objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
