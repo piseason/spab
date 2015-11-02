@@ -12,11 +12,15 @@ class TestController extends ControllerBase{
 		//$this->view->setTemplateAfter('base');
 	}
 	public function indexAction(){
-		$this->view->disable();
-		$Sheets =PHPExcel_IOFactory::load("schedule.xlsx");
-		 $dataArray = $Sheets->getActiveSheet()->setCellValue('A1', 'qqq');
-		 $eee=$Sheets->getSheets(0)->toArray();
-		 echo $eee[1][1];
+		$objPHPExcel=new PHPExcel();
+		$objPHPExcel->setActiveSheetIndex(0);
+		$objPHPExcel->getProperties()->setTitle("安全体验馆日程安排");
+		$objPHPExcel->getProperties()->setSubject("安全体验馆日程安排");
+		$sheet=$objPHPExcel->getActiveSheet();
+		$sheet->setCellValue("A1","aaa");
+		$objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
+        $file_name = '/aaa.xls';
+        $objWriter->save($file_name);
 		 
 	}
 }
