@@ -48,8 +48,12 @@ class TestController extends ControllerBase{
         	# code...
         	for ($j=0; $j <9 ; $j++) { 
         		# code...
-        		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);	
-        		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+                if($i>2&&$j>1){
+                    $objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_LEFT);    
+                }else{
+        		  $objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);	
+        		}
+                $objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
         		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setWrapText(true);
         	}
         	
