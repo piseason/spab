@@ -15,6 +15,7 @@ class TestController extends ControllerBase{
 
 		$Sheets =PHPExcel_IOFactory::load("schedule.xls");
 		 $dataArray = $Sheets->getSheet(0)->toArray(); 
-		 $this->view->setVar("info",$dataArray[1][1]); 
+		 echo $dataArray[1][1];
+		 
 	}
 }
