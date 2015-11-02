@@ -85,7 +85,7 @@ class TestController extends ControllerBase{
                 case '16': $hour="6";break;
                 default : $hour="7"; 
             }
-        echo $mon."|".$day.$hour;
+            echo $mon;
             //$objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
 
         }
