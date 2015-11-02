@@ -67,6 +67,9 @@ class TestController extends ControllerBase{
         $appointments=Appointments::Find();
         foreach ($appointments as $appointment) {
             # code...
+            if($appointment->state!=1){
+                continue;
+            }
 
             $time=$appointment->time;
             $time=explode("月",$time);
