@@ -70,10 +70,11 @@ class TestController extends ControllerBase{
 
             $time=$appointment->time;
             $time=explode("月",$time);
-            print_r($time);
             $mon=$time[0];
             $time=explode("日",$time[1]);
             $day=$time[0];
+
+            echo $mon." ".$day;
             $time=substr($time[1],2);
             $time=$explode(":",$time);
             $hour=$time[0];
