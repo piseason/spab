@@ -65,9 +65,27 @@ class TestController extends ControllerBase{
         }
 
         $appointments=Appointments::Find();
-        for ($i=0; $i < sizeof($appointments); $i++) { 
+        foreach ($appointments as $appointment) {
             # code...
-            
+            $time=$appointment->time;
+            $time=explode("月",$time);
+            $mon=$time[0];
+            $time=explode("日",$time[1]);
+            $day=$time[0];
+            $time=substr($time[1],2);
+            $time=$explode(":",$time);
+            $hour=$time[0];
+
+            switch($hour){
+                case '8': $hour="3";break;
+                case '10': $hour="4";break;
+                case '14': $hour="5";break;
+                case '16': $hour="6";break;
+                default : $hour="7"; 
+            }
+
+            $objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
+
         }
 
         $objActSheet->mergeCells('A1:I1');
