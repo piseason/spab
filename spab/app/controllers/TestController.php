@@ -19,9 +19,23 @@ class TestController extends ControllerBase{
         /**
          * 设置单元格的值
          */
-        $objActSheet->getColumnDimension('A')->setWidth(4);
+        $objActSheet->getColumnDimension('A')->setWidth(7);
         $objActSheet->getColumnDimension('B')->setWidth(10);
-        $objActSheet->getColumnDimensions('C:I')->setWidth(15);
+        $objActSheet->getColumnDimension('C')->setWidth(15);
+        $objActSheet->getColumnDimension('D')->setWidth(15);
+        $objActSheet->getColumnDimension('E')->setWidth(15);
+        $objActSheet->getColumnDimension('F')->setWidth(15);
+        $objActSheet->getColumnDimension('G')->setWidth(15);
+        $objActSheet->getColumnDimension('H')->setWidth(15);
+        $objActSheet->getColumnDimension('I')->setWidth(15);
+
+        $objActSheet->getRowDimension('1')->setRowHeight(6);
+        $objActSheet->getRowDimension('2')->setRowHeight(8);
+        $objActSheet->getRowDimension('3')->setRowHeight(25);
+        $objActSheet->getRowDimension('4')->setRowHeight(25);
+        $objActSheet->getRowDimension('5')->setRowHeight(25);
+        $objActSheet->getRowDimension('6')->setRowHeight(25);
+
 
         $objActSheet->mergeCells('A1:I1');
         $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表()');
