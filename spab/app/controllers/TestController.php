@@ -28,20 +28,20 @@ class TestController extends ControllerBase{
          */
         $objActSheet->getColumnDimension('A')->setWidth(7);
         $objActSheet->getColumnDimension('B')->setWidth(10);
-        $objActSheet->getColumnDimension('C')->setWidth(20);
-        $objActSheet->getColumnDimension('D')->setWidth(20);
-        $objActSheet->getColumnDimension('E')->setWidth(20);
-        $objActSheet->getColumnDimension('F')->setWidth(20);
-        $objActSheet->getColumnDimension('G')->setWidth(20);
-        $objActSheet->getColumnDimension('H')->setWidth(20);
-        $objActSheet->getColumnDimension('I')->setWidth(20);
+        $objActSheet->getColumnDimension('C')->setWidth(25);
+        $objActSheet->getColumnDimension('D')->setWidth(25);
+        $objActSheet->getColumnDimension('E')->setWidth(25);
+        $objActSheet->getColumnDimension('F')->setWidth(25);
+        $objActSheet->getColumnDimension('G')->setWidth(25);
+        $objActSheet->getColumnDimension('H')->setWidth(25);
+        $objActSheet->getColumnDimension('I')->setWidth(25);
 
         $objActSheet->getRowDimension('1')->setRowHeight(25);
         $objActSheet->getRowDimension('2')->setRowHeight(50);
-        $objActSheet->getRowDimension('3')->setRowHeight(85);
-        $objActSheet->getRowDimension('4')->setRowHeight(85);
-        $objActSheet->getRowDimension('5')->setRowHeight(85);
-        $objActSheet->getRowDimension('6')->setRowHeight(85);
+        $objActSheet->getRowDimension('3')->setRowHeight(95);
+        $objActSheet->getRowDimension('4')->setRowHeight(95);
+        $objActSheet->getRowDimension('5')->setRowHeight(95);
+        $objActSheet->getRowDimension('6')->setRowHeight(95);
         
         //设置居中
         for ($i=1; $i<7; $i++) { 
