@@ -13,7 +13,7 @@ class TestController extends ControllerBase{
 	}
 	public function indexAction(){
 		$character=array("日","一","二","三","四","五","六");
-		$strArray=array('A','B','C','D','E','F','G','H');
+		$strArray=array('A','B','C','D','E','F','G','H','I');
 		$time=time();
 		$time=strtotime("tomorrow",$time);
 		$date=getdate($time);
@@ -55,15 +55,14 @@ class TestController extends ControllerBase{
         	
         }
         //写入星期与日期
-        // $tem=$time;
+        $tem=$time;
         // $index=array();
-        // for ($i=0; $i <7 ; $i++) { 
-        //     # code...
-        //     $datetem=getdate($tem);
-        //     $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
-        //     //$index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
-        //     $tem=strtotime("tomorrow",$tem);
-        // }
+         for ($i=0; $i <7 ; $i++) { 
+             $datetem=getdate($tem);
+             $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
+             $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
+             $tem=strtotime("tomorrow",$tem);
+        }
 
         $objActSheet->mergeCells('A1:I1');
         $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表('.$date['mon'].'月'.$date['mday'].'日'.'-'.$inweektime['mon'].'月'.$inweektime['mday'].'日'.')');
