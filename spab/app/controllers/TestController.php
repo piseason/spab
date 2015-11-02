@@ -67,7 +67,9 @@ class TestController extends ControllerBase{
         $appointments=Appointments::Find();
         foreach ($appointments as $appointment) {
             # code...
+
             $time=$appointment->time;
+            echo $time;
             $time=explode("月",$time);
             $mon=$time[0];
             $time=explode("日",$time[1]);
@@ -84,7 +86,7 @@ class TestController extends ControllerBase{
                 default : $hour="7"; 
             }
 
-            $objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
+            //$objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
 
         }
 
