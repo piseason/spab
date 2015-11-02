@@ -15,6 +15,7 @@ class TestController extends ControllerBase{
 		
 		$strArray=array('A','B','C','D','E','F','G','H');
 		$time=time();
+		$time=strtotime("tomorrow",$time);
 		$date=getdate($time);
 		$inweek=strtotime("+1 week",$time);
 		$inweektime=getdate($inweek);
