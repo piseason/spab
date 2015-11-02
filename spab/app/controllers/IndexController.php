@@ -30,9 +30,11 @@ class IndexController extends ControllerBase
         if(!$auth){
             $sa=$this->session->get("sa");
             if(!$sa){
+                $this->session->set("saflag",false);
                 $this->response->redirect("http://".$localurl.":5001");
                 return;    
             }
+            $this->session->set("saflag",true);
             $saflag=true;
         }
 
@@ -40,6 +42,7 @@ class IndexController extends ControllerBase
             $this->view->setVar("uid","supervisor");
             $this->view->setVar("applyname",$sa->username);
         }else{
+            $this->session->set("saflag",false);
             $flag=$this->checkreserved($auth['uid']);
             if(!$flag){
                 $this->response->redirect("http://".$localurl.":5000/index/error");
@@ -56,17 +59,21 @@ class IndexController extends ControllerBase
     }
 
     public function postdataAction(){
-        $auth=$this->session->get("auth");
-        if(!$auth){
-            $this->dataReturn(array('error'=>true));
-            return;
-        }
+        $saflag=$this->session->get("saflag");
+            if(!$saflag){
+                $auth=$this->session->get("auth");
+            if(!$auth){
+                $this->dataReturn(array('error'=>true));
+                return;
+            }
 
-        $flag=$this->checkreserved($auth['uid']);
-        if(!$flag){
-            $this->dataReturn(array('error'=>true));
-            return;
+            $flag=$this->checkreserved($auth['uid']);
+            if(!$flag){
+                $this->dataReturn(array('error'=>true));
+                return;
+            }
         }
+        
 
         date_default_timezone_set('Asia/Shanghai'); 
         $this->view->disable();
