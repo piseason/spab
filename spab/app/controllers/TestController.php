@@ -12,6 +12,9 @@ class TestController extends ControllerBase{
 		//$this->view->setTemplateAfter('base');
 	}
 	public function indexAction(){
+		
+		$strArray=array('A','B','C','D','E','F','G','H');
+		$time=time();
 		$objPHPExcel = new PHPExcel();
         $objActSheet = $objPHPExcel->getActiveSheet();
         $objPHPExcel->getProperties()->setTitle('北航安全体验馆未来一周安排表');
@@ -30,35 +33,39 @@ class TestController extends ControllerBase{
         $objActSheet->getColumnDimension('I')->setWidth(20);
 
         $objActSheet->getRowDimension('1')->setRowHeight(18);
-        $objActSheet->getRowDimension('2')->setRowHeight(24);
+        $objActSheet->getRowDimension('2')->setRowHeight(50);
         $objActSheet->getRowDimension('3')->setRowHeight(75);
         $objActSheet->getRowDimension('4')->setRowHeight(75);
         $objActSheet->getRowDimension('5')->setRowHeight(75);
         $objActSheet->getRowDimension('6')->setRowHeight(75);
         
         
-        for ($i=1; $i<6; $i++) { 
+        for ($i=1; $i<7; $i++) { 
         	# code...
-        	
-        	$objActSheet->getStyle('A'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('B'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('C'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('D'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('E'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('F'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('G'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('H'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
-        	$objActSheet->getStyle('I'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	for ($j=0; $j <8 ; $j++) { 
+        		# code...
+        		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);	
+        		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	}
+        	// $objActSheet->getStyle('A'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('B'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('C'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('D'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('E'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('F'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('G'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('H'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        	// $objActSheet->getStyle('I'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
-        	$objActSheet->getStyle('A'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('B'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('C'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('D'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('E'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('F'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('G'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('H'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
-        	$objActSheet->getStyle('I'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('A'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('B'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('C'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('D'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('E'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('F'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('G'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('H'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        	// $objActSheet->getStyle('I'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
         }
 
         $objActSheet->mergeCells('A1:I1');
@@ -68,7 +75,7 @@ class TestController extends ControllerBase{
         $objActSheet->mergeCells('A5:A6');
         $objActSheet->setCellValue('A3','上午');
         $objActSheet->setCellValue('A5','下午');
-        $objActSheet->setCellValue('B3','8-10');
+        $objActSheet->setCellValue('B3','8-\n10');
         $objActSheet->setCellValue('B4','10-12');
         $objActSheet->setCellValue('B5','14-16');
         $objActSheet->setCellValue('B6','16-18');
