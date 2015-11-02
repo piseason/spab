@@ -38,10 +38,10 @@ class TestController extends ControllerBase{
 
         $objActSheet->getRowDimension('1')->setRowHeight(25);
         $objActSheet->getRowDimension('2')->setRowHeight(50);
-        $objActSheet->getRowDimension('3')->setRowHeight(75);
-        $objActSheet->getRowDimension('4')->setRowHeight(75);
-        $objActSheet->getRowDimension('5')->setRowHeight(75);
-        $objActSheet->getRowDimension('6')->setRowHeight(75);
+        $objActSheet->getRowDimension('3')->setRowHeight(85);
+        $objActSheet->getRowDimension('4')->setRowHeight(85);
+        $objActSheet->getRowDimension('5')->setRowHeight(85);
+        $objActSheet->getRowDimension('6')->setRowHeight(85);
         
         //设置居中
         for ($i=1; $i<7; $i++) { 
