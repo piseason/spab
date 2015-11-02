@@ -46,6 +46,7 @@ class TestController extends ControllerBase{
         		# code...
         		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);	
         		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+        		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setWrapText(true);
         	}
         	// $objActSheet->getStyle('A'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
         	// $objActSheet->getStyle('B'.$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
@@ -75,7 +76,7 @@ class TestController extends ControllerBase{
         $objActSheet->mergeCells('A5:A6');
         $objActSheet->setCellValue('A3','上午');
         $objActSheet->setCellValue('A5','下午');
-        $objActSheet->setCellValue('B3','8-\n10');
+        $objActSheet->setCellValue('B3','8-\r\n10');
         $objActSheet->setCellValue('B4','10-12');
         $objActSheet->setCellValue('B5','14-16');
         $objActSheet->setCellValue('B6','16-18');
