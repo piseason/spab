@@ -61,7 +61,6 @@ class TestController extends ControllerBase{
              $datetem=getdate($tem);
              $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
              $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
-             echo $index[$datetem['mon']."|".$datetem['mday']];
              $tem=strtotime("tomorrow",$tem);
         }
 
@@ -75,7 +74,8 @@ class TestController extends ControllerBase{
             $time=explode("日",$time[1]);
             $day=$time[0];
             $time=substr($time[1],6);
-            echo $mon."|".$day;
+            print_r($index);
+            echo $index[$mon."|".$day];
             $time=$explode(":",$time);
             $hour=$time[0];
             
