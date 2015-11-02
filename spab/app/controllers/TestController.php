@@ -75,7 +75,7 @@ class TestController extends ControllerBase{
             $day=$time[0];
             echo $time[1];
             $time=substr($time[1],4);
-            echo $time;
+            //echo $time;
             $time=$explode(":",$time);
             $hour=$time[0];
 
