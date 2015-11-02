@@ -26,17 +26,29 @@ class IndexController extends ControllerBase
     public function applyAction(){
         $localurl="10.254.20.50";
         $auth=$this->session->get("auth");
+        $saflag=false;
         if(!$auth){
-            $this->response->redirect("http://".$localurl.":5001");
+            $sa=$this->session->get("sa");
+            if(!$sa){
+                $this->response->redirect("http://".$localurl.":5001");
+                return;    
+            }
+            $saflag=true;
         }
 
-        $flag=$this->checkreserved($auth['uid']);
-        
+        if($saflag){
+            $this->view->setVar("uid","supervisor");
+            $this->view->setVar("applyname",$sa->username);
+        }else{
+            $flag=$this->checkreserved($auth['uid']);
             if(!$flag){
                 $this->response->redirect("http://".$localurl.":5000/index/error");
             }
-        $this->view->setVar("uid",$auth['uid']);
-        $this->view->setVar("applyname",$auth['displayName']);
+            $this->view->setVar("uid",$auth['uid']);
+            $this->view->setVar("applyname",$auth['displayName']);
+        }
+         
+        
     }
 
     public function errorAction(){

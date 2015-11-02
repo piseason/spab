@@ -36,7 +36,7 @@ class TestController extends ControllerBase{
         $objActSheet->getColumnDimension('H')->setWidth(20);
         $objActSheet->getColumnDimension('I')->setWidth(20);
 
-        $objActSheet->getRowDimension('1')->setRowHeight(18);
+        $objActSheet->getRowDimension('1')->setRowHeight(25);
         $objActSheet->getRowDimension('2')->setRowHeight(50);
         $objActSheet->getRowDimension('3')->setRowHeight(75);
         $objActSheet->getRowDimension('4')->setRowHeight(75);
@@ -46,7 +46,7 @@ class TestController extends ControllerBase{
         //设置居中
         for ($i=1; $i<7; $i++) { 
         	# code...
-        	for ($j=0; $j <8 ; $j++) { 
+        	for ($j=0; $j <9 ; $j++) { 
         		# code...
         		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);	
         		$objActSheet->getStyle($strArray[$j].$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
@@ -62,6 +62,12 @@ class TestController extends ControllerBase{
              $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
              $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
              $tem=strtotime("tomorrow",$tem);
+        }
+
+        $appointments=Appointments::Find();
+        for ($i=0; $i < sizeof($appointments); $i++) { 
+            # code...
+            
         }
 
         $objActSheet->mergeCells('A1:I1');
