@@ -15,6 +15,9 @@ class TestController extends ControllerBase{
 		
 		$strArray=array('A','B','C','D','E','F','G','H');
 		$time=time();
+		$date=getdate($time);
+		$inweek=strtotime("+1 week",$time);
+		$inweektime=getdate($inweek);
 		$objPHPExcel = new PHPExcel();
         $objActSheet = $objPHPExcel->getActiveSheet();
         $objPHPExcel->getProperties()->setTitle('北航安全体验馆未来一周安排表');
@@ -70,13 +73,13 @@ class TestController extends ControllerBase{
         }
 
         $objActSheet->mergeCells('A1:I1');
-        $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表()');
+        $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表('.$date['mon'].'月'.$date['mday'].'日'.'-'.$inweektime['mon'].'月'.$inweektime['mday'].'日'.')');
         $objActSheet->mergeCells('A2:B2');
         $objActSheet->mergeCells('A3:A4');
         $objActSheet->mergeCells('A5:A6');
         $objActSheet->setCellValue('A3','上午');
         $objActSheet->setCellValue('A5','下午');
-        $objActSheet->setCellValue('B3',"8-\n10");
+        $objActSheet->setCellValue('B3',"8-10");
         $objActSheet->setCellValue('B4','10-12');
         $objActSheet->setCellValue('B5','14-16');
         $objActSheet->setCellValue('B6','16-18');
