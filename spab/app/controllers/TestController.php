@@ -74,11 +74,9 @@ class TestController extends ControllerBase{
             $time=explode("日",$time[1]);
             $day=$time[0];
             $time=substr($time[1],6);
-            print_r($index);
-            echo $index[$mon."|".$day];
             $time=$explode(":",$time);
             $hour=$time[0];
-            
+            echo $hour;
 
             switch($hour){
                 case '8': $hour="3";break;
