@@ -1,6 +1,7 @@
 <?php
 
-use Phalcon\Mvc\Model\Query;
+include '../app/classes/PHPExcel.php';            
+include '../app/classes/PHPExcel/IOFactory.php';
 class TestController extends ControllerBase{
 
 	public function initialize()
@@ -12,9 +13,6 @@ class TestController extends ControllerBase{
 	}
 	public function indexAction(){
 
-		$this->view->disable();
-		$query=new Query("SELECT * FROM Appointments LIMIT 0,10",$this->getDI()); 
-		$appointments=$query->execute(array('top'=>10));
-		echo $appointments[0]->time;
+		
 	}
 }
