@@ -12,7 +12,7 @@ class TestController extends ControllerBase{
 		//$this->view->setTemplateAfter('base');
 	}
 	public function indexAction(){
-		$Sheets =PHPExcel_IOFactory::load("schedule.xls");
+		$Sheets =PHPExcel_IOFactory::load("schedule.xlsx");
 		 $dataArray = $Sheets->getSheet(0)->toArray();
 		 echo $dataArray[1][1];
 		 
