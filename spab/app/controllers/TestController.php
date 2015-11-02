@@ -19,7 +19,9 @@ class TestController extends ControllerBase{
         /**
          * 设置单元格的值
          */
-        $objActSheet->getColumnDimension('A')->setWidth(12);
+        $objActSheet->getColumnDimension('A')->setWidth(4);
+        $objActSheet->getColumnDimension('B')->setWidth(10);
+        $objActSheet->getColumnDimension('C:I')->setWidth(15);
 
         $objActSheet->mergeCells('A1:I1');
         $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表()');
