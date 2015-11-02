@@ -60,6 +60,7 @@ class TestController extends ControllerBase{
          for ($i=0; $i <7 ; $i++) { 
              $datetem=getdate($tem);
              $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
+             echo $datetem['mon']."|".$datetem['mday'];
              $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
              $tem=strtotime("tomorrow",$tem);
         }
@@ -77,6 +78,7 @@ class TestController extends ControllerBase{
             
             $time=$explode(":",$time);
             $hour=$time[0];
+            echo $index[$mon."|".$day];
 
             switch($hour){
                 case '8': $hour="3";break;
@@ -86,7 +88,7 @@ class TestController extends ControllerBase{
                 default : $hour="7"; 
             }
             
-            $objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
+            //$objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
 
         }
 
