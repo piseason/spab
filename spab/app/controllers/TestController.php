@@ -60,8 +60,8 @@ class TestController extends ControllerBase{
         for ($i=0; $i <7 ; $i++) { 
             # code...
             $datetem=getdate($tem);
-            $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\rn星期".$character[$datetem['wday']]);
-            $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
+            $objActSheet->setCellValue($strArray[$i+2]."2",$datetem['mon']."月".$datetem['mday']."日\r\n星期".$character[$datetem['wday']]);
+            //$index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
             $tem=strtotime("tomorrow",$tem);
         }
 
