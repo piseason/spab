@@ -1,1 +1,1 @@
-<a href="schedule.xlsx">时间表</a>
+<a href="schedule.xls">时间表</a>
