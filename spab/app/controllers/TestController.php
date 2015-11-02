@@ -74,10 +74,8 @@ class TestController extends ControllerBase{
             $time=explode("日",$time[1]);
             $day=$time[0];
             $time=substr($time[1],6);
-            $time=$explode(":",$time);
-            print_r($time);
+            $time=explode(":",$time);
             $hour=$time[0];
-            echo $hour;
 
             switch($hour){
                 case '8': $hour="3";break;
@@ -87,7 +85,7 @@ class TestController extends ControllerBase{
                 default : $hour="7"; 
             }
             
-            //$objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
+            $objActSheet->setCellValue($index[$mon."|".$day].$hour,"111");
 
         }
 
