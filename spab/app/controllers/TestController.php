@@ -15,7 +15,7 @@ class TestController extends ControllerBase{
 		$this->view->disable();
 		$Sheets =PHPExcel_IOFactory::load("schedule.xlsx");
 		 $dataArray = $Sheets->getSheet(0)->toArray();
-		 echo $dataArray[2][1];
+		 $dataArray[2][1]="333";
 		 print_r($dataArray);
 		 
 	}
