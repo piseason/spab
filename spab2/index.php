@@ -5,8 +5,8 @@ echo $localurl;
 
 
 // header("Content-Type: text/html; charset=utf-8");
-// include_once('CAS.php');			
-// phpCAS::setDebug();												
+ include_once('CAS.php');			
+ phpCAS::setDebug();												
 // phpCAS::client(CAS_VERSION_2_0,'sso.buaa.edu.cn',443,'');
 // phpCAS::setNoCasServerValidation();
 // phpCAS::forceAuthentication();echo "ok";
