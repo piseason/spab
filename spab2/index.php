@@ -11,7 +11,7 @@ phpCAS::client(CAS_VERSION_2_0,'sso.buaa.edu.cn',443,'');
 phpCAS::setNoCasServerValidation();
 phpCAS::forceAuthentication();echo "ok";
 phpCAS::handleLogoutRequests();  
-$auth = phpCAS::checkAuthentication();
+// /$auth = phpCAS::checkAuthentication();
 // if($auth){
 // 	$username = phpCAS::getAttributes();
 // 	//echo $username['uid'];
