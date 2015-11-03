@@ -1,5 +1,7 @@
 <?php
 
+echo "ooo";
+
 error_reporting(E_ALL);
 
 try {
