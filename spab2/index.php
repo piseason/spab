@@ -1,5 +1,6 @@
 <?php
 $localurl="10.254.20.50";
+header("Content-Type: text/html; charset=utf-8");
 include_once('CAS.php');			
 phpCAS::setDebug();												
 phpCAS::client(CAS_VERSION_2_0,'sso.buaa.edu.cn',443,'');
