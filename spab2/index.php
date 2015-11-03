@@ -1,6 +1,6 @@
 <?php
 
-$localurl="10.254.20.50";
+//$localurl="10.254.20.50";
 
 
  header("Content-Type: text/html; charset=utf-8");
@@ -8,9 +8,9 @@ $localurl="10.254.20.50";
  phpCAS::setDebug();												
 phpCAS::client(CAS_VERSION_2_0,'sso.buaa.edu.cn',443,'');
 phpCAS::setNoCasServerValidation();
-phpCAS::forceAuthentication();echo "ok";
-// phpCAS::handleLogoutRequests();  
-// /$auth = phpCAS::checkAuthentication();
+phpCAS::forceAuthentication();
+ phpCAS::handleLogoutRequests();  
+ /$auth = phpCAS::checkAuthentication();
 // if($auth){
 // 	$username = phpCAS::getAttributes();
 // 	//echo $username['uid'];
