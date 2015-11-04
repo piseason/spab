@@ -10,7 +10,7 @@ phpCAS::handleLogoutRequests();
 $auth = phpCAS::checkAuthentication();
 if($auth){
  	$username = phpCAS::getAttributes();
-	echo $username['uid'];
+	// echo $username['uid'];
 // 	$_SESSION["auth"]=$username;
 // 	header("Location: http://".$localurl.":5001/index/apply");   
 // 	exit;
