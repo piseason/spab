@@ -43,7 +43,7 @@ class IndexController extends ControllerBase
                 if($auth){
                     $username = phpCAS::getAttributes();
                     $this->session->set("auth",$username);
-                    $this->view->setVar("applyname",$username['employeeNumber']);
+                    $this->view->setVar("uid",$username['employeeNumber']);
                 } 
 
                 return;    
@@ -62,7 +62,7 @@ class IndexController extends ControllerBase
                 $this->response->redirect("http://".$localurl.":5000/index/error");
             }
             //$this->view->setVar("uid",$auth['uid']);
-            $this->view->setVar("applyname",$auth['employeeNumber']);
+            $this->view->setVar("uid",$auth['employeeNumber']);
         }
          
         
