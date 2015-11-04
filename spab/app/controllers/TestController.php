@@ -103,7 +103,7 @@ class TestController extends ControllerBase{
         }
 
         $objActSheet->mergeCells('A1:I1');
-        $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表('.$date['mon'].'月'.$date['mday'].'日'.'-'.$inweektime['mon'].'月'.$inweektime['mday'].'日'.')');
+        $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表('.$date['mon'].'月'.$date['mday'].'日'.'-'.$inweektime['mon'].'月'.($inweektime['mday']-1).'日'.')');
         $objActSheet->mergeCells('A2:B2');
         $objActSheet->mergeCells('A3:A4');
         $objActSheet->mergeCells('A5:A6');
