@@ -26,9 +26,9 @@ class IndexController extends ControllerBase
     public function applyAction(){
         $localurl="10.254.20.50";
         $auth=$this->session->get("auth");
+        $sa=$this->session->get("sa");
         $saflag=false;
         if(!$auth){
-            $sa=$this->session->get("sa");
             if(!$sa){
                 $this->session->set("saflag",false);
                 //$this->response->redirect("/test.php");
@@ -52,9 +52,12 @@ class IndexController extends ControllerBase
             $saflag=true;
         }
 
+        if($sa){
+            $saflag=true;
+        }
         if($saflag){
             $this->view->setVar("uid","supervisor");
-            $this->view->setVar("applyname",$sa->username);
+            //$this->view->setVar("applyname",$sa->username);
         }else{
             $this->session->set("saflag",false);
             $flag=$this->checkreserved($auth['uid']);
