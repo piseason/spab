@@ -1,4 +1,5 @@
 <?php
+$localurl="10.254.20.50";
 include_once('CAS.php');			
 phpCAS::setDebug();												
 phpCAS::client(CAS_VERSION_2_0,'sso.buaa.edu.cn',443,'');
@@ -8,9 +9,8 @@ phpCAS::handleLogoutRequests();
 $auth = phpCAS::checkAuthentication();
 if($auth){
 	$username = phpCAS::getAttributes();
-	echo $username['uid'];
-	//$_SESSION["auth"]=$username;
-	//header("Location: http://".$localurl.":5001/index/apply");   
+	$_SESSION["auth"]=$username;
+	header("Location: http://".$localurl.":5000/index/apply");   
 	exit;
 } 
 
