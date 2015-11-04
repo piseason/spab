@@ -41,8 +41,9 @@ class IndexController extends ControllerBase
                 phpCAS::handleLogoutRequests();  
                 $auth = phpCAS::checkAuthentication();
                 if($auth){
-                    $username = phpCAS::getUser();
-                    $this->view->setVar("applyname",$username);
+                    $username = phpCAS::getAttributes();
+                    $this->session->set("auth",$username);
+                    $this->view->setVar("applyname",$username['employeeNumber']);
                 } 
 
                 return;    
@@ -61,7 +62,7 @@ class IndexController extends ControllerBase
                 $this->response->redirect("http://".$localurl.":5000/index/error");
             }
             //$this->view->setVar("uid",$auth['uid']);
-            $this->view->setVar("applyname",$auth);
+            $this->view->setVar("applyname",$auth['employeeNumber']);
         }
          
         
