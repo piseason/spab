@@ -31,7 +31,7 @@ class IndexController extends ControllerBase
             $sa=$this->session->get("sa");
             if(!$sa){
                 $this->session->set("saflag",false);
-                $this->response->redirect("http://".$localurl.":5000");
+                $this->response->redirect("/test.php");
                 return;    
             }
             $this->session->set("saflag",true);
@@ -45,7 +45,7 @@ class IndexController extends ControllerBase
             $this->session->set("saflag",false);
             $flag=$this->checkreserved($auth['uid']);
             if(!$flag){
-                $this->response->redirect("http://".$localurl.":5001/index/error");
+                $this->response->redirect("http://".$localurl.":5000/index/error");
             }
             $this->view->setVar("uid",$auth['uid']);
             $this->view->setVar("applyname",$auth['displayName']);
