@@ -47,8 +47,8 @@ class IndexController extends ControllerBase
             if(!$flag){
                 $this->response->redirect("http://".$localurl.":5000/index/error");
             }
-            $this->view->setVar("uid",$auth['uid']);
-            $this->view->setVar("applyname",$auth['displayName']);
+            //$this->view->setVar("uid",$auth['uid']);
+            $this->view->setVar("applyname",$auth);
         }
          
         

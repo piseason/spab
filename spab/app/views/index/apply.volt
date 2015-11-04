@@ -10,7 +10,7 @@
 			参观人数：<input class='form-control' type="text" id="number" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
-			申请人姓名：<input class='form-control' readonly="true" type="text" id="appliantname" style="width:200px;display:inline-block;" value="{{applyname}}" />
+			申请人姓名：<input class='form-control' type="text" id="appliantname" style="width:200px;display:inline-block;"  />
 			</li>
 			<li>
 			申请人证件号：<input class='form-control' readonly="true" type="text" id="appliantid" style="width:200px;display:inline-block;" value="{{uid}}" />
