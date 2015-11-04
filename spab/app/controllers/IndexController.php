@@ -31,7 +31,20 @@ class IndexController extends ControllerBase
             $sa=$this->session->get("sa");
             if(!$sa){
                 $this->session->set("saflag",false);
-                $this->response->redirect("/test.php");
+                //$this->response->redirect("/test.php");
+
+                include_once('CAS.php');            
+                phpCAS::setDebug();                                             
+                phpCAS::client(CAS_VERSION_2_0,'sso.buaa.edu.cn',443,'');
+                phpCAS::setNoCasServerValidation();
+                phpCAS::forceAuthentication();
+                phpCAS::handleLogoutRequests();  
+                $auth = phpCAS::checkAuthentication();
+                if($auth){
+                    $username = phpCAS::getUser();
+                    $this->view->setVar("applyname",$username);
+                } 
+
                 return;    
             }
             $this->session->set("saflag",true);
