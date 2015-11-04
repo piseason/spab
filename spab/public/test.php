@@ -7,8 +7,8 @@ phpCAS::forceAuthentication();
 phpCAS::handleLogoutRequests();  
 $auth = phpCAS::checkAuthentication();
 if($auth){
-	$username = phpCAS::getUser();
-	
+	$username = phpCAS::getAttributes();
+	print_r($username);
 } 
 
 
