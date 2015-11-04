@@ -11,7 +11,7 @@ if($auth){
 	$username = phpCAS::getUser();
 	$_SESSION["auth"]=$username;
 	header("Location: http://".$localurl.":5000/index/apply");   
-	exit;
+	
 } 
 
 
