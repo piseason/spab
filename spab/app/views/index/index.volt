@@ -10,4 +10,5 @@
 	<button class='btn btn-warning'  onmouseover= "this.style.backgroundColor = 'rgba(229,100,25,0.5)';this.style.color='#FFF' ;" onmouseout  ="this.style.backgroundColor = 'rgba(229,100,25,0.7)' ;this.style.color='#000'" onclick="window.location='/index/apply'">现在预约</button>
 	<button class='btn btn-warning'  onmouseover= "this.style.backgroundColor = 'rgba(229,100,25,0.5)' ;this.style.color='#FFF' ;" onmouseout  ="this.style.backgroundColor = 'rgba(229,100,25,0.7)' ;this.style.color='#000' " onclick="window.location='/checkout/index'">预约查询</button>	
 </div>
-<a href="https://sso.buaa.edu.cn/logout">注销您的统一认证登录{{info}}</a>
+<a href="https://sso.buaa.edu.cn/logout">注销您的统一认证登录{{info}}</a><br/>
+<a href="/test">进入未来一周时间表下载</a>
