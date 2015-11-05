@@ -15,7 +15,7 @@ class IndexController extends ControllerBase
 	}
 
 	public function indexAction() {
-		$this->view->setVar('test','ddddd');
+		
 	}
 
     public function logoutAction(){
