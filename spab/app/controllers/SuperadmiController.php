@@ -3,7 +3,7 @@ use Phalcon\Mvc\Model\Query;
 class SuperadmiController extends ControllerBase{
 	public function initialize(){
 		$this->view->setTemplateAfter("ace");
-		//$this->tidyTable();
+		$this->tidyTable();
 	}
 
 	public function indexAction(){
@@ -295,7 +295,7 @@ class SuperadmiController extends ControllerBase{
 
             foreach ($deniedappointments as $appointment) {
             # code...
-            if($deniedappointments->checkexpired()){
+            if($appoitment->checkexpired()){
                 
                 $expiredappointment=new Expiredappointments();
                 $expiredappointment->department=$appointment->department;

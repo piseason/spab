@@ -295,11 +295,12 @@ class IndexController extends ControllerBase
                 }
             }
         }
+
         $deniedappointments=Deniedappointments::Find();
 
-            foreach ($deniedappointments as $appointment) {
+        foreach ($deniedappointments as $appointment) {
             # code...
-            if($deniedappointments->checkexpired()){
+            if($appoitment->checkexpired()){
                 
                 $expiredappointment=new Expiredappointments();
                 $expiredappointment->department=$appointment->department;
