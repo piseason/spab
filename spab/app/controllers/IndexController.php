@@ -7,8 +7,8 @@ class IndexController extends ControllerBase
 	{
         $this->view->setTemplateAfter('ace');
 
-        $info=$this->tidyTable();
-        $this->view->setVar("info",$info);
+        $this->tidyTable();
+        //$this->view->setVar("info",$info);
 		//parent::initialize();
 		//Phalcon\Tag::setTitle('主页');
 		//$this->view->setTemplateAfter('base');

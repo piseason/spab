@@ -3,6 +3,7 @@ use Phalcon\Mvc\Model\Query;
 class SuperadmiController extends ControllerBase{
 	public function initialize(){
 		$this->view->setTemplateAfter("ace");
+		$this->tidyTable();
 	}
 
 	public function indexAction(){
@@ -259,5 +260,64 @@ class SuperadmiController extends ControllerBase{
         $this->response->setHeader("Content-Type", "text/json; charset=utf-8");
         echo json_encode($ans);
         $this->view->disable();
+    }
+
+      private function tidyTable(){
+        $this->db->begin();
+        $appointments=Appointments::Find();
+        foreach ($appointments as $appointment) {
+            # code...
+
+            if($appointment->checkexpired()){
+                $expiredappointment=new Expiredappointments();
+                $expiredappointment->department=$appointment->department;
+                $expiredappointment->number=$appointment->number;
+                $expiredappointment->appliantname=$appointment->appliantname;
+                $expiredappointment->appliantid=$appointment->appliantid;
+                $expiredappointment->incharge=$appointment->incharge;
+                $expiredappointment->time=$appointment->time;
+                $expiredappointment->state=$appointment->state;
+                $expiredappointment->applycode=$appointment->applycode;
+                $expiredappointment->other=$appointment->other;
+                $expiredappointment->telephone=$appointment->telephone;
+                $expiredappointment->signuptime=$appointment->signuptime;
+                try{
+                    
+                    $expiredappointment->save();
+                    $appointment->delete();
+                }catch( Exception $e){
+                    $this->db->rollback();
+                    break;
+                }
+            }
+        }
+        $deniedappointments=Deniedappointments::Find();
+
+            foreach ($deniedappointments as $appointment) {
+            # code...
+            if($deniedappointments->checkexpired()){
+                
+                $expiredappointment=new Expiredappointments();
+                $expiredappointment->department=$appointment->department;
+                $expiredappointment->number=$appointment->number;
+                $expiredappointment->appliantname=$appointment->appliantname;
+                $expiredappointment->appliantid=$appointment->appliantid;
+                $expiredappointment->incharge=$appointment->incharge;
+                $expiredappointment->time=$appointment->time;
+                $expiredappointment->state=$appointment->state;
+                $expiredappointment->applycode=$appointment->applycode;
+                $expiredappointment->other=$appointment->other;
+                $expiredappointment->telephone=$appointment->telephone;
+                $expiredappointment->signuptime=$appointment->signuptime; 
+                try{
+                    $expiredappointment->save();
+                    $appointment->delete();
+                }catch( Exception $e){
+                    $this->db->rollback();
+                    break;
+                }
+            }
+        }
+        $this->db->commit();
     }
 }
