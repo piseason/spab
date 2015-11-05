@@ -295,7 +295,7 @@ class SuperadmiController extends ControllerBase{
 
             foreach ($deniedappointments as $appointment) {
             # code...
-            if($appoitment->checkexpired()){
+            if($appointment->checkexpired()){
                 
                 $expiredappointment=new Expiredappointments();
                 $expiredappointment->department=$appointment->department;
