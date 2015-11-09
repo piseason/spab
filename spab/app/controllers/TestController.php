@@ -13,6 +13,7 @@ class TestController extends ControllerBase{
 	}
 	public function indexAction(){
         $sa=$this->session->get("sa");
+        echo "ok";
         if(!$sa){
             echo "ONLY THE ADMINISTRATER CAN GET THE SCHEDULE";
         }else{
