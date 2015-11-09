@@ -123,7 +123,7 @@ class TestController extends ControllerBase{
 
     public function testAction(){
         $this->db->begin();
-        $appointment=new Appointments();
+        $appointment=new Deniedappointments();
         $appointment->department="123";
         $appointment->number=23;
         $appointment->appliantname="123";
