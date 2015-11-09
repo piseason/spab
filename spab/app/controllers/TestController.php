@@ -122,7 +122,7 @@ class TestController extends ControllerBase{
 	}
 
     public function leotestAction(){
-        
+        $this->view->setVar("test","ok");
         $this->db->begin();
         $sa=Superadmin::FindFirst(array(
                 "username=?1",
