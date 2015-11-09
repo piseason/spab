@@ -16,6 +16,7 @@
          <button type="submit" id='submit' class='btn btn-warning' style='color:#000;border:0; width:75%; background-color:rgba(229,100,25,0.7); font-size:20px; padding:5px;font-family: Microsoft YaHei;' onmouseover= "this.style.backgroundColor = 'rgba(229,100,25,0.5)' ;this.style.color='#FFF' ;" onmouseout  ="this.style.backgroundColor = 'rgba(229,100,25,0.7)' ;this.style.color='#000' ">登&nbsp;&nbsp;录</button>
     </div>          
 </div>
+<div style="height:80px;"></div>
 <div style="margin:0 auto;text-align:center;"><a href="/test">进入未来一周时间表下载</a></div>
 
 
