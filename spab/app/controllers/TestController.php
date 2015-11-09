@@ -138,6 +138,6 @@ class TestController extends ControllerBase{
             // $appointment->save();
             // $this->db->commit();
             // echo "right";
-            // $this->view->setVar("info","right");
+             $this->view->setVar("info","right");
 
 }
