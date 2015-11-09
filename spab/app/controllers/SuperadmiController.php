@@ -295,25 +295,25 @@ class SuperadmiController extends ControllerBase{
         }
         $deniedappointments=Deniedappointments::Find();
 
-            foreach ($deniedappointments as $appointment) {
+            foreach ($deniedappointments as $deniedappointment) {
             # code...
-            if($appointment->checkexpired()){
+            if($deniedappointment->checkexpired()){
                 
                 $expiredappointment=new Expiredappointments();
-                $expiredappointment->department=$appointment->department;
-                $expiredappointment->number=$appointment->number;
-                $expiredappointment->appliantname=$appointment->appliantname;
-                $expiredappointment->appliantid=$appointment->appliantid;
-                $expiredappointment->incharge=$appointment->incharge;
-                $expiredappointment->time=$appointment->time;
-                $expiredappointment->state=$appointment->state;
-                $expiredappointment->applycode=$appointment->applycode;
-                $expiredappointment->other=$appointment->other;
-                $expiredappointment->telephone=$appointment->telephone;
-                $expiredappointment->signuptime=$appointment->signuptime; 
+                $expiredappointment->department=$deniedappointment->department;
+                $expiredappointment->number=$deniedappointment->number;
+                $expiredappointment->appliantname=$deniedappointment->appliantname;
+                $expiredappointment->appliantid=$deniedappointment->appliantid;
+                $expiredappointment->incharge=$deniedappointment->incharge;
+                $expiredappointment->time=$deniedappointment->time;
+                $expiredappointment->state=$deniedappointment->state;
+                $expiredappointment->applycode=$deniedappointment->applycode;
+                $expiredappointment->other=$deniedappointment->other;
+                $expiredappointment->telephone=$deniedappointment->telephone;
+                $expiredappointment->signuptime=$deniedappointment->signuptime; 
                 try{
                     $expiredappointment->save();
-                    $appointment->delete();
+                    $deniedappointment->delete();
                 }catch( Exception $e){
                     $this->db->rollback();
                     break;

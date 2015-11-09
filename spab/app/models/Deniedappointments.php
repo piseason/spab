@@ -103,7 +103,7 @@ class Deniedappointments extends \Phalcon\Mvc\Model
                     $flag=false;
                 }
             }
-            return flag;
+            return $flag;
     }
 
 }
