@@ -122,17 +122,18 @@ class TestController extends ControllerBase{
 	}
 
     public function leotestAction(){         
+        
     }
 
-    public function tttAction(){
-        $pas=$this->request->getPost("pas","string");
-        $this->db->begin();
-         $sa=Superadmin::findFirst(array(
-                 "username=?1",
-                 "bind"=>array(1=>"security")
-             ));
-        $sa->password=$pas;
-        $sa->save();
-        $this->db->commit();
-    }
+    // public function tttAction(){
+    //     $pas=$this->request->getPost("pas","string");
+    //     $this->db->begin();
+    //      $sa=Superadmin::findFirst(array(
+    //              "username=?1",
+    //              "bind"=>array(1=>"security")
+    //          ));
+    //     $sa->password=$pas;
+    //     $sa->save();
+    //     $this->db->commit();
+    // }
 }
