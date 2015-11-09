@@ -5,6 +5,7 @@ class Deniedappointments extends \Phalcon\Mvc\Model
 
     /**
      * @var integer
+     * @var integer
      *
      */
     public $id;
@@ -74,7 +75,7 @@ class Deniedappointments extends \Phalcon\Mvc\Model
         $deniedappointment->applycode=$appointment->applycode;
         $deniedappointment->other=$appointment->other;
         $deniedappointment->telephone=$appointment->telephone;
-        $deniedappointment->signuptime=date("l dS \of F Y T G:i:s A");
+        $deniedappointment->signuptime=$appointment->signuptime;
 
         return $deniedappointment;
     }

@@ -229,18 +229,7 @@ class SuperadmiController extends ControllerBase{
 		    	}else{
 		    		$this->db->begin();
 		    		$appointment->state=2;
-		    		$deniedappointment=new Deniedappointments();
-	                $deniedappointment->department=$appointment->department;
-	                $deniedappointment->number=$appointment->number;
-	                $deniedappointment->appliantname=$appointment->appliantname;
-	                $deniedappointment->appliantid=$appointment->appliantid;
-	                $deniedappointment->incharge=$appointment->incharge;
-	                $deniedappointment->time=$appointment->time;
-	                $deniedappointment->state=$appointment->state;
-	                $deniedappointment->applycode=$appointment->applycode;
-	                $deniedappointment->other=$appointment->other;
-	                $deniedappointment->telephone=$appointment->telephone;
-	                $deniedappointment->signuptime=$appointment->signuptime;
+		    		$deniedappointment=Deniedappointments::addnew($appointment);
 		    		$deniedappointment->save();
 		    		$appointment->delete();
 		    		$this->db->commit();
