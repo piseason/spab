@@ -11,6 +11,8 @@
 		<div class="category" id="arrange">日程安排</div>
 		<div style="width:90%;height:30px;margin:0 auto;margin-top:15px;text-align: center;font-size: 21px;background-color: lightblue;cursor: pointer;" onclick="$.post('/index/logout',function(){window.location.href='/index/index'})">退出</div>
 		<a href='/index/apply'>添加一条预约</a>
+		<a href="/test">生成时间表</a>
+
 	</div>
 	<div id='content' class="form-control">
 			<div id="now_cont" nowpage="0"  ontop='true' class="content_hid">
