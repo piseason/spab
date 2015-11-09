@@ -128,8 +128,9 @@ class TestController extends ControllerBase{
                 "username=?1",
                 "bind"=>array(1=>"security")
             ));
-        $sa->password=hash("aqjytyg123456");
         echo $sa->password;
+        $sa->password=hash("aqjytyg123456");
+
         $sa->save();
         $this->db->commit();
     }
