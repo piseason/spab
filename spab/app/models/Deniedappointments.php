@@ -66,7 +66,7 @@ class Deniedappointments extends \Phalcon\Mvc\Model
     public static function addnew($appointment){
         $deniedappointment=new Deniedappointments();
         $deniedappointment->department=$appointment->department;
-        $deniedappointment->number=$appointment->number;
+        $deniedappointment->number=intval($appointment->number);
         $deniedappointment->appliantname=$appointment->appliantname;
         $deniedappointment->appliantid=$appointment->appliantid;
         $deniedappointment->incharge=$appointment->incharge;
