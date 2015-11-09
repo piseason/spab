@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 <script type="text/javascript" src="/lib/sha1-min.js"></script>
 <div class="login">
-    <div style='font-size:40px;color:purple;text-align:center;padding:30px 0;'>欢&nbsp;迎&nbsp;登&nbsp;录</div>
+    <div style='font-size:20px;color:purple;text-align:center;padding:30px 0;font-family: "微软雅黑"；'>欢&nbsp;迎&nbsp;登&nbsp;录</div>
     <div style='text-align:center'>
         <label for='username'><span style='font-size:25px;font-family: Microsoft YaHei UI; font-weight:normal;'>账&nbsp;号&nbsp;&nbsp;</span></label>
         <input autofocus required class='form-control' id='username' style='display:inline-block;height:36px;font-size:20px;width:180px;'/>

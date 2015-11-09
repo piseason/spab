@@ -4,9 +4,10 @@
     background-repeat:no-repeat;
 	border-radius: 20px;
 	margin-top:50px;
-    margin-left:55%;
+    margin:0 auto;
     padding-bottom:30px;
      -webkit-box-shadow:2px 2px 3px #ffffff ;	/*for chrome,safari*/
 	box-shadow:2px 2px 3px #ffffff ;			/*for opero, IE9+  %% IE6不支持阴影*/
 	-moz-box-shadow:2px 2px 3px #ffffff;		/*for firefox*/
+	
 }
