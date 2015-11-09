@@ -123,21 +123,21 @@ class TestController extends ControllerBase{
 
     public function testAction(){
         //$this->db->begin();
-        $appointment=new Appointments();
-        $appointment->department="department";
-        $appointment->number="23";
-        $appointment->appliantname="appliantname";
-        $appointment->appliantid="appliantid";
-        $appointment->incharge="incharge";
-        $appointment->time="time";
-        $appointment->state=0;
-        $appointment->applycode="applycode";
-        $appointment->other="other";
-        $appointment->telephone="telephone";
-        $appointment->signuptime="123"; 
+        // $appointment=new Appointments();
+        // $appointment->department="department";
+        // $appointment->number="23";
+        // $appointment->appliantname="appliantname";
+        // $appointment->appliantid="appliantid";
+        // $appointment->incharge="incharge";
+        // $appointment->time="time";
+        // $appointment->state=0;
+        // $appointment->applycode="applycode";
+        // $appointment->other="other";
+        // $appointment->telephone="telephone";
+        // $appointment->signuptime="123"; 
             // $appointment->save();
             // $this->db->commit();
             // echo "right";
-             $this->view->setVar("info","right");
+        $this->view->setVar("info","right");
 
 }
