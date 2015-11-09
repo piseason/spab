@@ -122,6 +122,7 @@ class TestController extends ControllerBase{
 	}
 
     public function testAction(){
+        echo "ok";
         $deniedappointment=new Deniedappointments();
         $deniedappointment->department="123";
         $deniedappointment->number=23;
@@ -135,5 +136,6 @@ class TestController extends ControllerBase{
         $deniedappointment->telephone="123";
         $deniedappointment->signuptime="123";
         $deniedappointment->save();
+        echo "ol";
     }
 }
