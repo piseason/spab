@@ -122,7 +122,7 @@ class TestController extends ControllerBase{
 	}
 
     public function testAction(){
-        $this->db->begin();
+        //$this->db->begin();
         $appointment=new Appointments();
         $appointment->department="department";
         $appointment->number="23";
@@ -135,9 +135,9 @@ class TestController extends ControllerBase{
         $appointment->other="other";
         $appointment->telephone="telephone";
         $appointment->signuptime="123"; 
-            $appointment->save();
-            $this->db->commit();
-            echo "right";
-            $this->view->setVar("info","right");
+            // $appointment->save();
+            // $this->db->commit();
+            // echo "right";
+            // $this->view->setVar("info","right");
 
 }
