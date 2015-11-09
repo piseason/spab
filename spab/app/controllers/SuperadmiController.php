@@ -228,7 +228,18 @@ class SuperadmiController extends ControllerBase{
 		    		return;
 		    	}else{
 		    		$appointment->state=2;
-		    		$deniedappointments=Deniedappointments::addnew($appointment);
+		    		$deniedappointment=new Deniedappointments();
+	                $deniedappointment->department=$appointment->department;
+	                $deniedappointment->number=$appointment->number;
+	                $deniedappointment->appliantname=$appointment->appliantname;
+	                $deniedappointment->appliantid=$appointment->appliantid;
+	                $deniedappointment->incharge=$appointment->incharge;
+	                $deniedappointment->time=$appointment->time;
+	                $deniedappointment->state=$appointment->state;
+	                $deniedappointment->applycode=$appointment->applycode;
+	                $deniedappointment->other=$appointment->other;
+	                $deniedappointment->telephone=$appointment->telephone;
+	                $deniedappointment->signuptime=$appointment->signuptime;
 		    		$deniedappointments->save();
 		    		$appointment->delete();
 		    	}
