@@ -124,16 +124,16 @@ class TestController extends ControllerBase{
     public function testAction(){
         $this->db->begin();
         $appointment=new Appointments();
-        $appointment->department="department";
-        $appointment->number="23";
-        $appointment->appliantname="appliantname";
-        $appointment->appliantid="appliantid";
-        $appointment->incharge="incharge";
-        $appointment->time="time";
+        $appointment->department="123";
+        $appointment->number=23;
+        $appointment->appliantname="123";
+        $appointment->appliantid="123";
+        $appointment->incharge="123";
+        $appointment->time="123";
         $appointment->state=0;
-        $appointment->applycode="applycode";
-        $appointment->other="other";
-        $appointment->telephone="telephone";
+        $appointment->applycode="123";
+        $appointment->other="13";
+        $appointment->telephone="123";
         $appointment->signuptime="123"; 
         try{
             $appointment->save();
