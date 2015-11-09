@@ -135,9 +135,13 @@ class TestController extends ControllerBase{
         $appointment->other="other";
         $appointment->telephone="telephone";
         $appointment->signuptime="123"; 
+        try{
             $appointment->save();
             $this->db->commit();
-            echo "right";
+            $this->view->setVar("info","right");
+        }catch( Exception $e){
+            $this->view->setVar("info","error");
+        }
         
-}
+    }
 }
