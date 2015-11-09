@@ -124,6 +124,7 @@ class SuperadmiController extends ControllerBase{
 		    	}else{
 		    		$appointment->state=2;
 		    		$deniedappointments=Deniedappointments::addnew($appointment);
+		    		print_r($deniedappointments);
 		    		$deniedappointments->save();
 		    		$appointment->delete();
 		    	}
