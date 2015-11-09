@@ -42,6 +42,10 @@ class IndexController extends ControllerBase
                 $auth = phpCAS::checkAuthentication();
                 if($auth){
                     $username = phpCAS::getAttributes();
+                    $flag=$this->checkreserved($username);
+                    if(!$flag){
+                        $this->response->redirect("http://".$localurl.":5000/index/error");
+                    }
                     $this->session->set("auth",$username);
                     $this->view->setVar("uid",$username['employeeNumber']);
                 } 
