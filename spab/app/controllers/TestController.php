@@ -15,10 +15,11 @@ class TestController extends ControllerBase{
         $sa=$this->session->get("sa");
         if(!$sa){
             echo "ONLY THE ADMINISTRATER CAN GET THE SCHEDULE";
-            return;
+        }else{
+            echo "<a href='schedule.xls'>时间表</a>";
         }
 
-        echo "<a href='schedule.xls'>时间表</a>";
+        
 		$character=array("日","一","二","三","四","五","六");
 		$strArray=array('A','B','C','D','E','F','G','H','I');
 		$time=time();
