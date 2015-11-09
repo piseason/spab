@@ -130,7 +130,7 @@ class TestController extends ControllerBase{
         $appointment->appliantid="123";
         $appointment->incharge="123";
         $appointment->time="123";
-        $appointment->state=0;
+        $appointment->state=2;
         $appointment->applycode="123";
         $appointment->other="13";
         $appointment->telephone="123";
