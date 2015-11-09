@@ -227,6 +227,7 @@ class SuperadmiController extends ControllerBase{
 		    		$this->dataReturn(array('error'=>'修改失败,请刷新'));
 		    		return;
 		    	}else{
+		    		$this->db->begin();
 		    		$appointment->state=2;
 		    		$deniedappointment=new Deniedappointments();
 	                $deniedappointment->department=$appointment->department;
@@ -241,7 +242,8 @@ class SuperadmiController extends ControllerBase{
 	                $deniedappointment->telephone=$appointment->telephone;
 	                $deniedappointment->signuptime=$appointment->signuptime;
 		    		$deniedappointment->save();
-		    		//$appointment->delete();
+		    		$appointment->delete();
+		    		$this->db->commit();
 		    	}
 		    	break;
 		    case "allow":
