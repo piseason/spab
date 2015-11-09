@@ -12,6 +12,13 @@ class TestController extends ControllerBase{
 		//$this->view->setTemplateAfter('base');
 	}
 	public function indexAction(){
+        $sa=$this->session->get("sa");
+        if(!$sa){
+            echo "ONLY THE ADMINISTRATER CAN GET THE SCHEDULE";
+            return;
+        }
+
+        echo "<a href='schedule.xls'>时间表</a>";
 		$character=array("日","一","二","三","四","五","六");
 		$strArray=array('A','B','C','D','E','F','G','H','I');
 		$time=time();
@@ -93,8 +100,8 @@ class TestController extends ControllerBase{
             }
             
             $str="部门:".$appointment->department."\r\n";
-            $str.="申请人:".$appointment->appliantname."\r\n";
-            $str.="联系方式:".$appointment->telephone."\r\n";
+            $str.="负责人:".$appointment->incharge."\r\n";
+            $str.="负责人手机:".$appointment->telephone."\r\n";
             $str.="参观人数:".$appointment->number."\r\n";
             $str.="讲解员:";
 
