@@ -122,19 +122,24 @@ class TestController extends ControllerBase{
 	}
 
     public function testAction(){
-        $this->view->setVar("info","ok");
-        $deniedappointment=new Appointments();
-        $deniedappointment->department="123";
-        $deniedappointment->number=23;
-        $deniedappointment->appliantname="123";
-        $deniedappointment->appliantid="123";
-        $deniedappointment->incharge="123";
-        $deniedappointment->time="123";
-        $deniedappointment->state=1;
-        $deniedappointment->applycode="123";
-        $deniedappointment->other="123";
-        $deniedappointment->telephone="123";
-        $deniedappointment->signuptime="123";
-        $deniedappointment->save();
-    }
+        $this->db->begin();
+        $appointment=new Appointments();
+        $appointment->department="department";
+        $appointment->number="23";
+        $appointment->appliantname="appliantname";
+        $appointment->appliantid="appliantid";
+        $appointment->incharge="incharge";
+        $appointment->time="time";
+        $appointment->state="0";
+        $appointment->applycode="applycode";
+        $appointment->other="other";
+        $appointment->telephone="telephone";
+        $appointment->signuptime=date("l dS \of F Y T G:i:s A"); 
+        try{
+            $appointment->save();
+            $this->db->commit();
+            echo "right";
+        }catch( Exception $e){
+            echo "error";
+        }
 }
