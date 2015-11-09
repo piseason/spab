@@ -120,4 +120,20 @@ class TestController extends ControllerBase{
         $objWriter->save($file_name);
 		 
 	}
+
+    public function testAction(){
+        $deniedappointment=new Deniedappointments();
+        $deniedappointment->department="123";
+        $deniedappointment->number=23;
+        $deniedappointment->appliantname="123";
+        $deniedappointment->appliantid="123";
+        $deniedappointment->incharge="123";
+        $deniedappointment->time="123";
+        $deniedappointment->state=23;
+        $deniedappointment->applycode="123";
+        $deniedappointment->other="123";
+        $deniedappointment->telephone="123";
+        $deniedappointment->signuptime="123";
+        $deniedappointment->save();
+    }
 }
