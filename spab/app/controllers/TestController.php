@@ -13,9 +13,9 @@ class TestController extends ControllerBase{
 	}
 	public function indexAction(){
         $sa=$this->session->get("sa");
-        
-             $this->response->redirect("http://10.254.20.50:5000/index/error");
-        
+        if(!$sa){
+             $this->response->redirect("http://10.254.20.50:5000/");
+        }
 		$character=array("日","一","二","三","四","五","六");
 		$strArray=array('A','B','C','D','E','F','G','H','I');
 		$time=time();
