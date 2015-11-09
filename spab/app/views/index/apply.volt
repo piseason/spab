@@ -154,7 +154,7 @@ function Leo_submit(){
 					});
 					
 				}else{
-					leomessage("提交成功!<br/>请牢记您的查询码！！！<br/>"+data.applycode);
+					leomessage("提交成功!<br/>");
 					$("#message").children("button").click(function(){
 						window.location.href="/";
 					});
