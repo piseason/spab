@@ -240,7 +240,7 @@ class SuperadmiController extends ControllerBase{
 	                $deniedappointment->other=$appointment->other;
 	                $deniedappointment->telephone=$appointment->telephone;
 	                $deniedappointment->signuptime=$appointment->signuptime;
-		    		$deniedappointments->save();
+		    		$deniedappointment->save();
 		    		$appointment->delete();
 		    	}
 		    	break;
