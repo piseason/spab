@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 <script type="text/javascript" src="/lib/sha1-min.js"></script>
+<div style="height:30px;"></div>
 <div class="login">
     <div style='font-size:20px;color:purple;text-align:center;padding:30px 0;font-family: "微软雅黑"；'>欢&nbsp;迎&nbsp;登&nbsp;录</div>
     <div style='text-align:center'>
@@ -15,7 +16,7 @@
          <button type="submit" id='submit' class='btn btn-warning' style='color:#000;border:0; width:75%; background-color:rgba(229,100,25,0.7); font-size:20px; padding:5px;font-family: Microsoft YaHei;' onmouseover= "this.style.backgroundColor = 'rgba(229,100,25,0.5)' ;this.style.color='#FFF' ;" onmouseout  ="this.style.backgroundColor = 'rgba(229,100,25,0.7)' ;this.style.color='#000' ">登&nbsp;&nbsp;录</button>
     </div>          
 </div>
-<a href="/test">进入未来一周时间表下载</a>
+<a href="/test" style="margin:0 auto;">进入未来一周时间表下载</a>
 
 <script type="text/javascript">
     $("document").ready(function(){
