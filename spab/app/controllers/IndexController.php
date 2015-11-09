@@ -7,7 +7,7 @@ class IndexController extends ControllerBase
 	{
         $this->view->setTemplateAfter('ace');
 
-       //$this->tidyTable();
+       $this->tidyTable();
         //$this->view->setVar("info",$info);
 		//parent::initialize();
 		//Phalcon\Tag::setTitle('主页');
@@ -304,7 +304,7 @@ class IndexController extends ControllerBase
 
         foreach ($deniedappointments as $appointment) {
             # code...
-            if($appoitment->checkexpired()){
+            if($appointment->checkexpired()){
                 
                 $expiredappointment=new Expiredappointments();
                 $expiredappointment->department=$appointment->department;

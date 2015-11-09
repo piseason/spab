@@ -19,7 +19,7 @@
 			参观时段：<input class='form-control' type="text" id="time" readonly="true" style="width:250px;display:inline-block;" value="请点击右侧空白时段输入" />
 			</li>
 			<li>
-			负责人：<input class='form-control' type="text" id="incharge" style="width:200px;display:inline-block;" />
+			负责人姓名：<input class='form-control' type="text" id="incharge" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
 			负责人联系方式：<input class='form-control' type="text" id="telephone" style="width:200px;display:inline-block;" />
