@@ -60,7 +60,7 @@ class IndexController extends ControllerBase
             //$this->view->setVar("applyname",$sa->username);
         }else{
             $this->session->set("saflag",false);
-            $flag=$this->checkreserved($auth);
+            $flag=$this->checkreserved($auth['employeeNumber']);
             if(!$flag){
                 $this->response->redirect("http://".$localurl.":5000/index/error");
             }
