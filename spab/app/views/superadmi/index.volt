@@ -2,13 +2,13 @@
 <script type="text/javascript" src="/lib/sha1-min.js"></script>
 <div style="height:80px;"></div>
 <div class="login">
-    <div style='font-size:20px;color:purple;text-align:center;padding:30px 0;font-family: "微软雅黑"；'>欢&nbsp;迎&nbsp;登&nbsp;录</div>
+    <div style='font-size:25px;color:purple;text-align:center;padding:30px 0;font-family: "微软雅黑"；'>欢&nbsp;迎&nbsp;登&nbsp;录</div>
     <div style='text-align:center'>
-        <label for='username'><span style='font-size:25px;font-family: Microsoft YaHei UI; font-weight:normal;'>账&nbsp;号&nbsp;&nbsp;</span></label>
+        <label for='username'><span style='font-size:20px;font-family: Microsoft YaHei UI; font-weight:normal;'>账&nbsp;号&nbsp;&nbsp;</span></label>
         <input autofocus required class='form-control' id='username' style='display:inline-block;height:36px;font-size:20px;width:180px;'/>
     </div>
     <div style='text-align:center;margin-top:10px;'>
-        <label for='password'><span style='font-size:25px;font-family: Microsoft YaHei UI; font-weight:normal;'>密&nbsp;码&nbsp;&nbsp;</span></label>
+        <label for='password'><span style='font-size:20px;font-family: Microsoft YaHei UI; font-weight:normal;'>密&nbsp;码&nbsp;&nbsp;</span></label>
         <input required type='password' class='form-control' id='password' style='display:inline-block;height:36px;font-size:20px;width:180px;'/>
     </div>
     <div style="height:30px;"></div>
