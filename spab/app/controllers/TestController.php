@@ -123,7 +123,7 @@ class TestController extends ControllerBase{
 
     public function testAction(){
         $this->view->setVar("info","ok");
-        $deniedappointment=new Deniedappointments();
+        $deniedappointment=new Appointments();
         $deniedappointment->department="123";
         $deniedappointment->number=23;
         $deniedappointment->appliantname="123";
