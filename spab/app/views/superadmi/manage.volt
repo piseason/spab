@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="/css/apply.css">
 <link rel="stylesheet" type="text/css" href="/css/manage.css">
 <div id="contain" class='form-control'>
-	<div id='catalogue' class='form-control'>
+	<div id='catalogue' >
 		<div style="height:30px"></div>
 		<div style="margin:0 auto;text-align:center;"><img src="/images/user2.png"></div>
 		<div class="category" id='now'>正在申请</div>

@@ -3,6 +3,7 @@
 	width:25%;
 	height:100%;
 	background-color: white;
+	border-right:1px blue solid;
 }
 #content{
 	float:left;
