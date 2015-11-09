@@ -12,7 +12,6 @@ class TestController extends ControllerBase{
 		//$this->view->setTemplateAfter('base');
 	}
 	public function indexAction(){
-        echo "ooo";
 		$character=array("日","一","二","三","四","五","六");
 		$strArray=array('A','B','C','D','E','F','G','H','I');
 		$time=time();
@@ -123,7 +122,7 @@ class TestController extends ControllerBase{
 	}
 
     public function leotestAction(){         
-        
+        echo "ooo";
     }
 
     // public function tttAction(){
