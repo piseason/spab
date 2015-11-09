@@ -121,27 +121,7 @@ class TestController extends ControllerBase{
 		 
 	}
 
-    public function testAction(){
-        $this->db->begin();
-        $appointment=new Deniedappointments();
-        $appointment->department="123";
-        $appointment->number=23;
-        $appointment->appliantname="123";
-        $appointment->appliantid="123";
-        $appointment->incharge="123";
-        $appointment->time="123";
-        $appointment->state=2;
-        $appointment->applycode="123";
-        $appointment->other="13";
-        $appointment->telephone="123";
-        $appointment->signuptime="123"; 
-        try{
-            $appointment->save();
-            $this->db->commit();
-            $this->view->setVar("info","right");
-        }catch( Exception $e){
-            $this->view->setVar("info","error");
-        }
+    public function leotestAction(){
         
     }
 }

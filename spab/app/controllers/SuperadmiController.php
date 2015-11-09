@@ -3,7 +3,7 @@ use Phalcon\Mvc\Model\Query;
 class SuperadmiController extends ControllerBase{
 	public function initialize(){
 		$this->view->setTemplateAfter("ace");
-		//$this->tidyTable();
+		$this->tidyTable();
 	}
 
 	public function indexAction(){
