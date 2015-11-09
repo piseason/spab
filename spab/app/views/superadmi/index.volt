@@ -17,7 +17,7 @@
     </div>          
 </div>
 <div style="height:80px;"></div>
-<div style="margin:0 auto;text-align:center;"><a href="/test">进入未来一周时间表下载</a></div>
+<div style="margin:0 auto;text-align:center;color:white;"><a href="/test">进入未来一周时间表下载</a></div>
 
 
 <script type="text/javascript">
