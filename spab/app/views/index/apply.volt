@@ -54,10 +54,8 @@
 	var appoints = new Array();
 	var character="日一二三四五六";
 	var characters=character.split("");
-	
-		alert("jquery running");
+	$("document").ready(function() {
 		$.post("/index/gettime",function(data){
-			alert("data posted and returned :"+data);
 			initTable(data);
 		});
 		$('#other').bind('input propertychange', function() {
@@ -81,6 +79,7 @@
 		
 		
 
+	});
 
 function initTable(data){
 	appoint=data.appoints;
@@ -144,8 +143,7 @@ function Leo_submit(){
 			"time":$("#time").val(),
 			"timeIndex":$("#time").prop("i")+"|"+$("#time").prop("j"),
 			"other":$("#other").val(),
-			"telephone":$("#telephone").val(),
-			"ts": Math.random()
+			"telephone":$("#telephone").val()
 		};
 		
 		$.post("/index/postdata",inputdata,function(data){
