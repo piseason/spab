@@ -54,13 +54,12 @@
 	var appoints = new Array();
 	var character="日一二三四五六";
 	var characters=character.split("");
-	alert("js可以执行");
 	$("document").ready(function() {
 		alert("jquery running");
-		$.post("/index/gettime",function(data){
-			alert("data posted and returned :"+data);
-			initTable(data);
-		});
+		// $.post("/index/gettime",function(data){
+		// 	alert("data posted and returned :"+data);
+		// 	initTable(data);
+		// });
 		$('#other').bind('input propertychange', function() {
 
 			var va = $(this).val();
