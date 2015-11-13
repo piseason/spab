@@ -18,6 +18,7 @@ class IndexController extends ControllerBase
 	}
 
 	public function indexAction() {
+        $localurl="10.254.20.50";
 		if(empty($_SERVER['HTTP_USER_AGENT'])){ 
                 $this->response->redirect("http://".$localurl.":5000/index/error2");  
             } 
