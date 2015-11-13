@@ -29,21 +29,21 @@ class TestController extends ControllerBase{
                
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
-               $this->response->redirect("http://".$localurl.":5000/");  
+               $this->response->redirect("http://".$localurl.":5000");  
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Chrome')){ 
-                 $this->response->redirect("http://".$localurl.":5000/"); 
+                 $this->response->redirect("http://".$localurl.":5000"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Safari')){ 
-                 $this->response->redirect("http://".$localurl.":5000/"); 
+                 $this->response->redirect("http://".$localurl.":5000"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Opera')){ 
-                 $this->response->redirect("http://".$localurl.":5000/"); 
+                 $this->response->redirect("http://".$localurl.":5000"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'360SE')){ 
-                $this->response->redirect("http://".$localurl.":5000/"); 
+                $this->response->redirect("http://".$localurl.":5000"); 
             } else{
-                $this->response->redirect("http://".$localurl.":5000/"); 
+                $this->response->redirect("http://".$localurl.":5000"); 
             }
     }
 	public function indexAction(){

@@ -9,7 +9,7 @@ class IndexController extends ControllerBase
 
        $this->tidyTable();
 
-            $localurl="10.254.20.50";
+        $localurl="10.254.20.50";
         if(empty($_SERVER['HTTP_USER_AGENT'])){ 
                 $this->response->redirect("http://".$localurl.":5000/test/error2");  
             } 
