@@ -8,22 +8,20 @@ class IndexController extends ControllerBase
         $this->view->setTemplateAfter('ace');
 
        $this->tidyTable();
-
-        $localurl="10.254.20.50";
         if(empty($_SERVER['HTTP_USER_AGENT'])){ 
-                $this->response->redirect("http://".$localurl.":5000/test/error2");  
+                $this->response->redirect("/test/error2");  
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 9.0')){ 
-                $this->response->redirect("http://".$localurl.":5000/test/error2"); 
+                $this->response->redirect("/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 8.0')){ 
-               $this->response->redirect("http://".$localurl.":5000/test/error2"); 
+               $this->response->redirect("/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 7.0')){ 
-                $this->response->redirect("http://".$localurl.":5000/test/error2"); 
+                $this->response->redirect("/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 6.0')){ 
-                $this->response->redirect("http://".$localurl.":5000/test/error2"); 
+                $this->response->redirect("/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
                 
