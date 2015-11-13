@@ -9,19 +9,19 @@ class IndexController extends ControllerBase
 
        $this->tidyTable();
         if(empty($_SERVER['HTTP_USER_AGENT'])){ 
-                $this->response->redirect("/test/error2");  
+                $this->response->redirect("/test/error");  
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 9.0')){ 
-                $this->response->redirect("/test/error2"); 
+                $this->response->redirect("/test/error"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 8.0')){ 
-               $this->response->redirect("/test/error2"); 
+               $this->response->redirect("/test/error"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 7.0')){ 
-                $this->response->redirect("/test/error2"); 
+                $this->response->redirect("/test/error"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 6.0')){ 
-                $this->response->redirect("/test/error2"); 
+                $this->response->redirect("/test/error"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
                 

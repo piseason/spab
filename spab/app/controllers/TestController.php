@@ -11,7 +11,7 @@ class TestController extends ControllerBase{
 		//Phalcon\Tag::setTitle('主页');
 		//$this->view->setTemplateAfter('base');
 	}
-    public function error2Action(){
+    public function errorAction(){
             if(empty($_SERVER['HTTP_USER_AGENT'])){ 
                  
             } 
@@ -28,21 +28,21 @@ class TestController extends ControllerBase{
                
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
-               $this->response->redirect("/");  
+                    $this->response->redirect("/");  
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Chrome')){ 
-                 $this->response->redirect("/"); 
+                    $this->response->redirect("/"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Safari')){ 
-                 $this->response->redirect("/"); 
+                    $this->response->redirect("/"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Opera')){ 
-                 $this->response->redirect("/"); 
+                    $this->response->redirect("/"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'360SE')){ 
-                $this->response->redirect("/"); 
-            } else{
-                $this->response->redirect("/"); 
+                    $this->response->redirect("/"); 
+            }else{
+                    $this->response->redirect("/"); 
             }
     }
 	public function indexAction(){
