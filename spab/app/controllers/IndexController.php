@@ -9,30 +9,21 @@ class IndexController extends ControllerBase
 
        $this->tidyTable();
 
-            
-        
-        //$this->view->setVar("info",$info);
-		//parent::initialize();
-		//Phalcon\Tag::setTitle('主页');
-		//$this->view->setTemplateAfter('base');
-	}
-
-	public function indexAction() {
-        $localurl="10.254.20.50";
-		if(empty($_SERVER['HTTP_USER_AGENT'])){ 
-                $this->response->redirect("http://".$localurl.":5000/index/error2");  
+            $localurl="10.254.20.50";
+        if(empty($_SERVER['HTTP_USER_AGENT'])){ 
+                $this->response->redirect("http://".$localurl.":5000/test/error2");  
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 9.0')){ 
-                $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+                $this->response->redirect("http://".$localurl.":5000/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 8.0')){ 
-               $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+               $this->response->redirect("http://".$localurl.":5000/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 7.0')){ 
-                $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+                $this->response->redirect("http://".$localurl.":5000/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 6.0')){ 
-                $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+                $this->response->redirect("http://".$localurl.":5000/test/error2"); 
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
                 
@@ -50,6 +41,15 @@ class IndexController extends ControllerBase
                 
             } else{
             }
+        
+        //$this->view->setVar("info",$info);
+		//parent::initialize();
+		//Phalcon\Tag::setTitle('主页');
+		//$this->view->setTemplateAfter('base');
+	}
+
+	public function indexAction() {
+       
 	}
 
     public function logoutAction(){
@@ -112,9 +112,7 @@ class IndexController extends ControllerBase
     public function errorAction(){
 
     }
-    public function error2Action(){
-
-    }
+    
 
     public function postdataAction(){
         $saflag=$this->session->get("saflag");
