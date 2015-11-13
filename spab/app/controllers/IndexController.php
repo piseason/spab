@@ -8,9 +8,17 @@ class IndexController extends ControllerBase
         $this->view->setTemplateAfter('ace');
 
        $this->tidyTable();
-       my_get_browser();
-       function my_get_browser(){ 
-            if(empty($_SERVER['HTTP_USER_AGENT'])){ 
+
+            
+        
+        //$this->view->setVar("info",$info);
+		//parent::initialize();
+		//Phalcon\Tag::setTitle('主页');
+		//$this->view->setTemplateAfter('base');
+	}
+
+	public function indexAction() {
+		if(empty($_SERVER['HTTP_USER_AGENT'])){ 
                 $this->response->redirect("http://".$localurl.":5000/index/error2");  
             } 
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 9.0')){ 
@@ -41,15 +49,6 @@ class IndexController extends ControllerBase
                 
             } else{
             }
-        }
-        //$this->view->setVar("info",$info);
-		//parent::initialize();
-		//Phalcon\Tag::setTitle('主页');
-		//$this->view->setTemplateAfter('base');
-	}
-
-	public function indexAction() {
-		
 	}
 
     public function logoutAction(){
