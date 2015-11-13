@@ -27,23 +27,23 @@ class TestController extends ControllerBase{
             if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 6.0')){ 
                
             } 
-            // if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
-            //         $this->response->redirect("/");  
-            // } 
-            // if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Chrome')){ 
-            //         $this->response->redirect("/"); 
-            // } 
-            // if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Safari')){ 
-            //         $this->response->redirect("/"); 
-            // } 
-            // if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Opera')){ 
-            //         $this->response->redirect("/"); 
-            // } 
-            // if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'360SE')){ 
-            //         $this->response->redirect("/"); 
-            // }else{
-            //         $this->response->redirect("/"); 
-            // }
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
+                $this->response->redirect("/");
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Chrome')){ 
+                $this->response->redirect("/");   
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Safari')){ 
+                 $this->response->redirect("/");
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Opera')){ 
+                 $this->response->redirect("/");
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'360SE')){ 
+                $this->response->redirect("/");
+            } else{
+                $this->response->redirect("/");
+            }
     }
 	public function indexAction(){
         $sa=$this->session->get("sa");
