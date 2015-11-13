@@ -8,6 +8,40 @@ class IndexController extends ControllerBase
         $this->view->setTemplateAfter('ace');
 
        $this->tidyTable();
+       my_get_browser();
+       function my_get_browser(){ 
+            if(empty($_SERVER['HTTP_USER_AGENT'])){ 
+                $this->response->redirect("http://".$localurl.":5000/index/error2");  
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 9.0')){ 
+                $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 8.0')){ 
+               $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 7.0')){ 
+                $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'MSIE 6.0')){ 
+                $this->response->redirect("http://".$localurl.":5000/index/error2"); 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Firefox')){ 
+                
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Chrome')){ 
+                 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Safari')){ 
+                 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'Opera')){ 
+                 
+            } 
+            if(false!==strpos($_SERVER['HTTP_USER_AGENT'],'360SE')){ 
+                
+            } else{
+            }
+        }
         //$this->view->setVar("info",$info);
 		//parent::initialize();
 		//Phalcon\Tag::setTitle('主页');
@@ -76,6 +110,9 @@ class IndexController extends ControllerBase
     }
 
     public function errorAction(){
+
+    }
+    public function error2Action(){
 
     }
 
