@@ -2,4 +2,4 @@
 <h1 style="color:white;">如果您在使用360浏览器，请关闭ie兼容模式,使用极速模式!</h1>
 <h1 style="color:white;">或联系管理员<br/>TEL:010-82317766</h1>
 
-<a href="#">刷新</a>
+<a href="/">刷新</a>
