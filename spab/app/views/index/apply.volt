@@ -154,7 +154,7 @@ function Leo_submit(){
 					});
 					
 				}else{
-					leomessage("提交成功!<br/>");
+					leomessage("预约已经提交!<br/>请等待答复。<br/> 请您及时到首页点击'预约查询'<br/>确认是过滤器预约成功");
 					$("#message").children("button").click(function(){
 						window.location.href="/";
 					});
