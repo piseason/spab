@@ -43,5 +43,15 @@
 		
 		$("#messagecarrier").show('normal');
 	}
+
+	function leomessage2(str){
+		if(str||str==""){
+			$("#message_str").html("<div style='font-size:20px;'>"+str+"</div>");
+		}else{
+			$("#message_str").html("undefined");
+		}
+		
+		$("#messagecarrier").show('normal');
+	}
 	</script>
 </html>

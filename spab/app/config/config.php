@@ -4,7 +4,7 @@ return new \Phalcon\Config(array(
 	'database' => array(
 		'adapter'  => 'Mysql',
 		'host'     => 'localhost',
-		'username' => 'leonardo',
+		'username' => 'yanni',
 		'password' => '123456',
 		'name'     => 'spab',
 	),

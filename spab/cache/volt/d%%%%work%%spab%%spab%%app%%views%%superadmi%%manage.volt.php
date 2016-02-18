@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="/css/apply.css">
 <link rel="stylesheet" type="text/css" href="/css/manage.css">
 <div id="contain" class='form-control'>
-	<div id='catalogue' class='form-control'>
+	<div id='catalogue' >
 		<div style="height:30px"></div>
 		<div style="margin:0 auto;text-align:center;"><img src="/images/user2.png"></div>
 		<div class="category" id='now'>正在申请</div>
@@ -10,7 +10,9 @@
 		<div class="category" id='denied'>未通过申请</div>
 		<div class="category" id="arrange">日程安排</div>
 		<div style="width:90%;height:30px;margin:0 auto;margin-top:15px;text-align: center;font-size: 21px;background-color: lightblue;cursor: pointer;" onclick="$.post('/index/logout',function(){window.location.href='/index/index'})">退出</div>
-		
+		<a href='/index/apply'>添加一条预约</a>
+		<a href="/test">生成时间表</a>
+
 	</div>
 	<div id='content' class="form-control">
 			<div id="now_cont" nowpage="0"  ontop='true' class="content_hid">
@@ -288,6 +290,7 @@ function initArrange(){
 			$("#b3").click(function(){
 				var day=$(this).prop('day');
 				$("#table1 td").animate({height:40},function(){
+
 					$("#replypanel").slideDown('fast');
 
 					$("#cancel").unbind("click");

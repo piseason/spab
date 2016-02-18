@@ -290,6 +290,7 @@ function initArrange(){
 			$("#b3").click(function(){
 				var day=$(this).prop('day');
 				$("#table1 td").animate({height:40},function(){
+
 					$("#replypanel").slideDown('fast');
 
 					$("#cancel").unbind("click");

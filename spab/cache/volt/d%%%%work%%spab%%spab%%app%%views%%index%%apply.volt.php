@@ -10,19 +10,19 @@
 			参观人数：<input class='form-control' type="text" id="number" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
-			申请人姓名：<input class='form-control' readonly="true" type="text" id="appliantname" style="width:200px;display:inline-block;" value="<?php echo $applyname; ?>" />
+			申请人姓名：<input class='form-control' type="text" id="appliantname" style="width:200px;display:inline-block;"  />
 			</li>
 			<li>
 			申请人证件号：<input class='form-control' readonly="true" type="text" id="appliantid" style="width:200px;display:inline-block;" value="<?php echo $uid; ?>" />
 			</li>
 			<li>
-			负责人：<input class='form-control' type="text" id="incharge" style="width:200px;display:inline-block;" />
-			</li>
-			<li>
 			参观时段：<input class='form-control' type="text" id="time" readonly="true" style="width:250px;display:inline-block;" value="请点击右侧空白时段输入" />
 			</li>
 			<li>
-			联系方式：<input class='form-control' type="text" id="telephone" style="width:200px;display:inline-block;" />
+			负责人姓名：<input class='form-control' type="text" id="incharge" style="width:200px;display:inline-block;" />
+			</li>
+			<li>
+			负责人联系方式：<input class='form-control' type="text" id="telephone" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
 			申请备注及其他：<br/><textarea class='form-control' id="other" style="width:300px;height:100px;display:inline-block;max-width:300px;max-height:100px;"></textarea>
@@ -154,7 +154,7 @@ function Leo_submit(){
 					});
 					
 				}else{
-					leomessage("提交成功!<br/>请牢记您的查询码！！！<br/>"+data.applycode);
+					leomessage2("预约已经提交!<br/>请等待答复。<br/> 请您及时到首页点击'预约查询'<br/>确认是否预约成功");
 					$("#message").children("button").click(function(){
 						window.location.href="/";
 					});
