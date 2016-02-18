@@ -1,3 +1,4 @@
+spab/cache/*
 cache/cachefile/*.txt
 cache/volt/*.php
 cache/temp/*.xls
