@@ -7,7 +7,7 @@
 			部门(学院+班号)：<input class='form-control' type="text" id="department" style="width:200px;display:inline-block;"   />
 			</li>
 			<li>
-			参观人数：<input class='form-control' type="text" id="number" style="width:200px;display:inline-block;" />
+			参观人数：<input class='form-control' type="text" id="number" style="width:200px;display:inline-block;" value='单场容量10～30人'/>
 			</li>
 			<li>
 			申请人姓名：<input class='form-control' type="text" id="appliantname" style="width:200px;display:inline-block;"  />
@@ -22,7 +22,7 @@
 			负责人姓名：<input class='form-control' type="text" id="incharge" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
-			负责人联系方式：<input class='form-control' type="text" id="telephone" style="width:200px;display:inline-block;" />
+			负责人手机号：<input class='form-control' type="text" id="telephone" style="width:200px;display:inline-block;" />
 			</li>
 			<li>
 			申请备注及其他：<br/><textarea class='form-control' id="other" style="width:300px;height:100px;display:inline-block;max-width:300px;max-height:100px;"></textarea>
