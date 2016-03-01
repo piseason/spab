@@ -50,11 +50,11 @@ class SuperadmiController extends ControllerBase{
         $character=array("日","一","二","三","四","五","六");
         $time=time();
         for($i=0;$i<7;$i++){
-        	if($i==0){
-        		 $time=strtotime("next Monday",$time);
-        	}else{
+        	//if($i==0){
+        		// $time=strtotime("next Monday",$time);
+        	//}else{
         		$time=strtotime("tomorrow",$time);
-        	}
+        	//}
             
             $date=getdate($time);
             //$rdata[$i]=$date['mon']."|".$date["mday"]."|".$date["wday"];

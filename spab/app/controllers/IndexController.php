@@ -7,7 +7,7 @@ class IndexController extends ControllerBase
 	{
         $this->view->setTemplateAfter('ace');
 
-       //$this->tidyTable();
+       $this->tidyTable();
         if(empty($_SERVER['HTTP_USER_AGENT'])){ 
                 $this->response->redirect("/test/error");  
             } 
@@ -42,7 +42,7 @@ class IndexController extends ControllerBase
         
         //$this->view->setVar("info",$info);
 		//parent::initialize();
-		Phalcon\Tag::setTitle('主页');
+		//Phalcon\Tag::setTitle('主页');
 		//$this->view->setTemplateAfter('base');
 	}
 
@@ -59,9 +59,9 @@ class IndexController extends ControllerBase
         $localurl="10.254.20.50";
         
         /*这几行代码的作用是在没有统一论证的情况下进行身份确认跳过的，正常工作时请将其注释*/
-        $username=array();
-        $username['employeeNumber']='123456';
-        $this->session->set("auth",$username);
+        // $username=array();
+        // $username['employeeNumber']='123456';
+        // $this->session->set("auth",$username);
         /*身份确认跳过代码到此为止*/
 
         $auth=$this->session->get("auth");
@@ -194,11 +194,11 @@ class IndexController extends ControllerBase
         $character=array("日","一","二","三","四","五","六");
         $time=time();
         for($i=0;$i<7;$i++){
-            if($i==0){
-                $time=strtotime("next Monday",$time);
-            }else{
+            //if($i==0){
+              //  $time=strtotime("next Monday",$time);
+            //}else{
                 $time=strtotime("tomorrow",$time);
-            }
+            //}
             
             $date=getdate($time);
             //$rdata[$i]=$date['mon']."|".$date["mday"]."|".$date["wday"];
