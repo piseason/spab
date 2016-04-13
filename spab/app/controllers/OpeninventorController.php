@@ -14,7 +14,7 @@ class OpeninventorController extends ControllerBase{
 			"username=?1",
 			"bind"=>array(1=>$user)
 			));
-		
+
 		if(!$user){
 			$this->dataReturn(array("error1"=>"无法找到该用户，请重新输入或联系管理员。"));
 			return;
@@ -26,7 +26,7 @@ class OpeninventorController extends ControllerBase{
 			$this->dataReturn(array("error2"=>"你所提供的密码是错误的，请重新输入或联系管理员。"));
 			return;
 		}
-
+		$this->db->begin();
 		$user->password=$np_hex;
         $user->save();
         $this->db->commit();
