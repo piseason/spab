@@ -74,7 +74,7 @@ class TestController extends ControllerBase{
              $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
              $tem=strtotime("tomorrow",$tem);
         }
-return;
+
         $appointments=Appointments::Find();
         foreach ($appointments as $appointment) {
             # code...
@@ -108,7 +108,7 @@ return;
             $objActSheet->setCellValue($index[$mon."|".$day].$hour,$str);
 
         }
-
+return;
         $objActSheet->mergeCells('A1:I1');
         $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表('.$date['mon'].'月'.$date['mday'].'日'.'-'.$inweektime['mon'].'月'.($inweektime['mday']-1).'日'.')');
         $objActSheet->mergeCells('A2:B2');
