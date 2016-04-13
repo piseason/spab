@@ -6,7 +6,7 @@
 </p>
 
 <p>
-<h2>	新密码：<input id="np" type="password" />{{newpwd}}<br/></h3>
+<h2>	新密码：<input id="np" type="password" /><span id="npspan" style="font-size:12px;color:red;"></span>{{newpwd}}<br/></h3>
 <h2>	重新输入：<input id="ri" type="password" /><span id="info" style="font-size:12px;color:red;"></span></h4>
 </p>
 
@@ -33,6 +33,12 @@
 				return;
 			}else{
 				$("#oldpwd").html("");
+			}
+			if(np==""){
+				$("#npspan").html("此项不可为空");
+				return;
+			}else{
+				$("#npspan").html("");
 			}
 			if(ri!=np){
 				$("#info").html("两次输入的密码必须一致，请重新输入");
