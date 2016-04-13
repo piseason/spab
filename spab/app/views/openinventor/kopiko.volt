@@ -1,9 +1,27 @@
+<script type="text/javascript" src="/lib/jquery.js"></script>
 <p>
-<h1>用户名：<input type="text" />{{username}}<br/></h1>
-<h2>原密码：<input type="password" />{{oldpwd}}</h2>
+<h2>用户名：<input id="user" type="text" />{{username}}<br/></h1>
+<h2>原密码：<input id="op" type="password" />{{oldpwd}}</h2>
 </p>
 
 <p>
-<h3>	新密码：<input type="password" />{{newpwd}}<br/></h3>
-<h4>	重新输入：<input type="password" />{{inputag}}</h4>
+<h2>	新密码：<input id="np" type="password" />{{newpwd}}<br/></h3>
+<h2>	重新输入：<input id="ri" type="password" />{{inputag}}</h4>
 </p>
+
+<p>
+	<button id="but">修改</button>
+</p>
+
+<script type="text/javascript">
+	$("document").ready(function(){
+		$("#but").click(function(){
+			var user=$("#user").value();
+			var op=$("op").value();
+			var np=$("np").value();
+			var ri=$("ri").value();
+
+			alert(ri);
+		});
+	});
+</script>
