@@ -120,7 +120,7 @@ function initTable(data){
 				case '2':
 					var tdd = $("#table1 tr:eq(" + (i + 1) + ") td:eq(" + (j + 1) + ")");
 					tdd.css('background-color', 'yellow');
-					tdd.html("休息");
+					tdd.html("内部培训");
 					tdd.css("color", "black");
 					tdd.css("cursor", "default");
 					tdd.unbind("click");
