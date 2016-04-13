@@ -17,9 +17,9 @@
 	$("document").ready(function(){
 		$("#but").click(function(){
 			var user=$("#user").val();
-			var op=$("op").val();
-			var np=$("np").val();
-			var ri=$("ri").val();
+			var op=$("#op").val();
+			var np=$("#np").val();
+			var ri=$("#ri").val();
 
 			alert(ri);
 		});
