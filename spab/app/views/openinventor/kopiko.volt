@@ -6,7 +6,7 @@
 
 <p>
 <h2>	新密码：<input id="np" type="password" />{{newpwd}}<br/></h3>
-<h2>	重新输入：<input id="ri" type="password" />{{inputag}}</h4>
+<h2>	重新输入：<input id="ri" type="password" /><span id="info"></span></h4>
 </p>
 
 <p>
@@ -21,7 +21,22 @@
 			var np=$("#np").val();
 			var ri=$("#ri").val();
 
-			alert(ri);
+			if(ri!=np){
+				$("#info").html("两次输入的密码必须一致，请重新输入");
+				$("#ri").val("");
+				$("#np").val("");
+				return;
+			}else{
+				$("#info").html("");
+			}
+
+			// $.post("/openinventor/kopiko2",{"user":user,"op":hex_sha1($("#op").val()),"np":np},function(data){
+   //                  if(!data.error){
+   //                      window.location.href=data.url;
+   //                  }else{
+   //                      leomessage(data.error);
+   //                  }
+   //          });
 		});
 	});
 </script>
