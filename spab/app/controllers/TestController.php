@@ -123,6 +123,9 @@ class TestController extends ControllerBase{
         
         $objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
         $file_name = 'schedule.xls';
+        if(file_exists($file_name)){
+            unlink($file_name);
+        }
         $objWriter->save($file_name);
 		 
 	}
