@@ -78,7 +78,7 @@ class SuperadmiController extends ControllerBase{
 
                 	}else{
 
-                		if($this->checkholiday($date['wday'],$str)){ //这里可以更改休息日的条件
+                		if($this->checkholiday($date['wday'],$j,$str)){ //这里可以更改休息日的条件
 		                    $rdata_str.="2";
 		                }else{
 		                    $rdata_str.="1";
@@ -86,7 +86,7 @@ class SuperadmiController extends ControllerBase{
                 	}
                 	
                     
-                }else if($this->checkholiday($date['wday'],$str)){ //这里可以更改休息日的条件
+                }else if($this->checkholiday($date['wday'],$j,$str)){ //这里可以更改休息日的条件
                     $rdata_str.="2";
                 }else{
                     $rdata_str.="1";

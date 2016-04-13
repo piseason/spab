@@ -7,7 +7,7 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 		$this->response->setHeader("Content-Type", "text/html; charset=utf-8");
 	}
 
-	public function checkholiday($date,$str){
+	public function checkholiday($date,$order,$str){
 	$times=Times::findFirst(array(
 			"time=?1",
 			"bind"=>array(1=>$str)
@@ -16,17 +16,11 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 		return ($times->newstate=='休息日');
 	}
 	if($date==6||$date==0){
-		echo $str;
 		return true;
 	}
 
-	$str_trim=explode("周", $str);
-	$str_trim=explode(":", $str_trim[1]);
-	$str_trim=substr($str_trim[0], 2);
-	echo $str_trim;
-	if($date==4&&($str_trim=="14"||$str_trim=="16")){
+	if($date==4&&$order>1){
 		return true;
 	}
-
 }
 }
