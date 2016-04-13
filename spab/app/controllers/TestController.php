@@ -49,7 +49,7 @@ class TestController extends ControllerBase{
         $objActSheet->getRowDimension('4')->setRowHeight(95);
         $objActSheet->getRowDimension('5')->setRowHeight(95);
         $objActSheet->getRowDimension('6')->setRowHeight(95);
-        return;
+        
         //设置居中
         for ($i=1; $i<7; $i++) { 
         	# code...
@@ -74,7 +74,7 @@ class TestController extends ControllerBase{
              $index[$datetem['mon']."|".$datetem['mday']]=$strArray[$i+2];
              $tem=strtotime("tomorrow",$tem);
         }
-
+return;
         $appointments=Appointments::Find();
         foreach ($appointments as $appointment) {
             # code...
