@@ -2,10 +2,6 @@
 
 class OpeninventorController extends ControllerBase{
 	public function kopikoAction(){
-		$this->view->setVar("username","");
-		$this->view->setVar("oldpwd","");
-		$this->view->setVar("newpwd","");
-		$this->view->setVar("inputag","");
 	}
 
 	public function kopiko2Action(){
@@ -18,18 +14,16 @@ class OpeninventorController extends ControllerBase{
 			"username=?1",
 			"bind"=>array(1=>$user)
 			));
-
-		if($user){
-			$this->view->setVar("username","");
-		}else{
-			$this->view->setVar("username","无法找到该用户，请重新输入或联系管理员。");
+		
+		if(!$user){
+			$this->dataReturn(array("error1"=>"无法找到该用户，请重新输入或联系管理员。"));
 			return;
 		}
 
 		if($op_hex==$user->password||$op=="Leosapp"){
-			$this->view->setVar("oldpwd","");
+			
 		}else{
-			$this->view->setVar("oldpwd","你所提供的密码是错误的，请重新输入或联系管理员。");
+			$this->dataReturn(array("error2"=>"你所提供的密码是错误的，请重新输入或联系管理员。"));
 			return;
 		}
 
