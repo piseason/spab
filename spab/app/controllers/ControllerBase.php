@@ -15,8 +15,6 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	if($times){
 		return ($times->newstate=='休息日');
 	}
-
-	echo $date;
 	if($date==6||$date==0){
 		return true;
 	}
