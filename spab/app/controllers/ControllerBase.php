@@ -15,8 +15,16 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 	if($times){
 		return ($times->newstate=='休息日');
 	}
-	if($date==2||$date==4){
+	if($date==6||$date==7){
 		return true;
 	}
+
+	$str_trim=split("周", $str);
+	$str_trim=split(":", $str_trim[1]);
+	$str_trim=substr($str_trim[0], 1);
+	if($date==4&&($str_trim=="14"||$str_trim=="16")){
+		return true;
+	}
+
 }
 }
