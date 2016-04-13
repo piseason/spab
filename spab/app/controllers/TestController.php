@@ -108,7 +108,7 @@ class TestController extends ControllerBase{
             $objActSheet->setCellValue($index[$mon."|".$day].$hour,$str);
 
         }
-return;
+
         $objActSheet->mergeCells('A1:I1');
         $objActSheet->setCellValue('A1','北航安全体验馆未来一周安排表('.$date['mon'].'月'.$date['mday'].'日'.'-'.$inweektime['mon'].'月'.($inweektime['mday']-1).'日'.')');
         $objActSheet->mergeCells('A2:B2');
@@ -120,7 +120,6 @@ return;
         $objActSheet->setCellValue('B4','10-12');
         $objActSheet->setCellValue('B5','14-16');
         $objActSheet->setCellValue('B6','16-18');
-        
         
         $objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
         $file_name = 'schedule.xls';
