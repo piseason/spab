@@ -16,10 +16,10 @@
 <script type="text/javascript">
 	$("document").ready(function(){
 		$("#but").click(function(){
-			var user=$("#user").value();
-			var op=$("op").value();
-			var np=$("np").value();
-			var ri=$("ri").value();
+			var user=$("#user").val();
+			var op=$("op").val();
+			var np=$("np").val();
+			var ri=$("ri").val();
 
 			alert(ri);
 		});
