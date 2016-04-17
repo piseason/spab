@@ -177,14 +177,19 @@ class IndexController extends ControllerBase
                 "bind"=>array(1=>$uid)
             ));
 
-        
+        $count=0;
         $flag=true;
+        $MAX_APPLICATION=2;
         foreach ($appointments as $appointment) {
             # code...
             //如果存在一条未过期的预约，那么认为该用户是有预约的
-            if(!$appointment->checkexpired()) $flag=false;
+            if(!$appointment->checkexpired()) $count++;
         }
-            return $flag;
+
+        if($count>=$MAX_APPLICATION){
+           $flag=false;
+        } 
+        return $flag;
 }
 
     public function gettimeAction(){
