@@ -14,12 +14,12 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 		));
 	if($times){
 		//return ($times->newstate=='休息日');
-		return 0;
+		return 2;
 	}
 
-	//休息日条件，返回值为0，前端呈现为内部培训
+	//休息日条件，返回值为2，前端呈现为内部培训
 	if($date==6||$date==0){
-		return 0;
+		return 2;
 	}
 	//行前教育条件，返回值为1，前端呈现为行前教育
 	if($date==4&&$order>1){

@@ -205,15 +205,16 @@ class IndexController extends ControllerBase
             $form_str=$date['mon']."月".$date['mday']."日"."周".$character[$date['wday']];
             $rdata[$i]=$form_str;
             for($j=0;$j<4;$j++){
-                $holidayflag=$this->checkholiday($date['wday'],$j,$str);
+                
                 $str=$form_str.(2*$j+8+2*($j>1?1:0)).":00~".(2*$j+8+2*($j>1?1:0)+2).":00";
                 $appointment=Appointments::findFirst(array(
                     'time=?1',
                     'bind'=>array(1=>$str)
                     ));
+                $holidayflag=$this->checkholiday($date['wday'],$j,$str);
                 if(Appointments::checkreservate($str)){
                     $rdata_str.="0";
-                }else if($holidayflag==0){ //这里可以更改休息日的条件
+                }else if($holidayflag==2){ //这里可以更改休息日的条件
                     $rdata_str.="2";
                 }else if($holidayflag==1){
                     $rdata_str.="4";
