@@ -214,9 +214,9 @@ class IndexController extends ControllerBase
                 $holidayflag=$this->checkholiday($date['wday'],$j,$str);
                 if(Appointments::checkreservate($str)){
                     $rdata_str.="0";
-                }else if($holidayflag==1){ //这里可以更改休息日的条件
+                }else if($holidayflag==2){ //这里可以更改休息日的条件
                     $rdata_str.="2";
-                }else if($holidayflag==2){
+                }else if($holidayflag==1){
                     $rdata_str.="4";
                 }else{
                     $rdata_str.="1";
