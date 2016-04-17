@@ -21,7 +21,7 @@
 	<div style="width:950px;height:60px"></div>
 	<p class="TEL">
 		<font>体验中心:</font>3 号公寓东侧地下一层
-		<font>联系电话:</font>82317766
+		<font>联系电话:</font>82316749
 	</p>
 	</div>
 		{{ content() }}
