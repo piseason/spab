@@ -91,7 +91,7 @@ function initTable(data){
 			$("#table1 tr:eq("+0+") td:eq("+(j+1)+")").html(data.date[j]);
 			for(var i=0;i<4;i++){
 
-				//0:已预约 1:可预约 2：休息日
+				//0:已预约 1:可预约 2：休息日 3:行前教育
 			switch (appoints[i + j*4]) {
 				case '0': 
 					var tdd = $("#table1 tr:eq(" + (i + 1) + ") td:eq(" + (j + 1) + ")");
@@ -121,6 +121,15 @@ function initTable(data){
 					var tdd = $("#table1 tr:eq(" + (i + 1) + ") td:eq(" + (j + 1) + ")");
 					tdd.css('background-color', 'yellow');
 					tdd.html("内部培训");
+					tdd.css("color", "black");
+					tdd.css("cursor", "default");
+					tdd.unbind("click");
+					
+					break;
+				case '4':
+					var tdd = $("#table1 tr:eq(" + (i + 1) + ") td:eq(" + (j + 1) + ")");
+					tdd.css('background-color', 'yellow');
+					tdd.html("行前教育");
 					tdd.css("color", "black");
 					tdd.css("cursor", "default");
 					tdd.unbind("click");

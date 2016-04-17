@@ -61,6 +61,7 @@ class SuperadmiController extends ControllerBase{
             $form_str=$date['mon']."月".$date['mday']."日"."周".$character[$date['wday']];
             $rdata[$i]=$form_str;
             for($j=0;$j<4;$j++){
+            	$holidayflag=$this->checkholiday($date['wday'],$j,$str);
                 $str=$form_str.(2*$j+8+2*($j>1?1:0)).":00~".(2*$j+8+2*($j>1?1:0)+2).":00";
 
                 $appointment=Appointments::findFirst(array(
@@ -77,8 +78,7 @@ class SuperadmiController extends ControllerBase{
                 		$rappliant[$i*4+$j]=$appointment->department." ".$appointment->appliantname." ".$appointment->number."人";
 
                 	}else{
-
-                		if($this->checkholiday($date['wday'],$j,$str)){ //这里可以更改休息日的条件
+                		if($holidayflag==0||$holidayflag==1){ //这里可以更改休息日的条件
 		                    $rdata_str.="2";
 		                }else{
 		                    $rdata_str.="1";
@@ -86,7 +86,7 @@ class SuperadmiController extends ControllerBase{
                 	}
                 	
                     
-                }else if($this->checkholiday($date['wday'],$j,$str)){ //这里可以更改休息日的条件
+                }else if($holidayflag==0||$holidayflag==1){ //这里可以更改休息日的条件
                     $rdata_str.="2";
                 }else{
                     $rdata_str.="1";

@@ -13,14 +13,17 @@ class ControllerBase extends \Phalcon\Mvc\Controller
 			"bind"=>array(1=>$str)
 		));
 	if($times){
-		return ($times->newstate=='休息日');
-	}
-	if($date==6||$date==0){
-		return true;
+		//return ($times->newstate=='休息日');
+		return 0;
 	}
 
+	//休息日条件，返回值为0，前端呈现为内部培训
+	if($date==6||$date==0){
+		return 0;
+	}
+	//行前教育条件，返回值为1，前端呈现为行前教育
 	if($date==4&&$order>1){
-		return true;
+		return 1;
 	}
 }
 }
