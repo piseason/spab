@@ -72,7 +72,7 @@ class CheckoutController extends ControllerBase{
 				$this->session->set("appointment",$appointment);
 				$this->dataReturn(array("url"=>"/checkout/access"));
 			}else{
-        		$this->dataReturn(array("error"=>"您输入的申请码无效,请重新输入或联系管理员(8231 7766)"));}
+        		$this->dataReturn(array("error"=>"您输入的证件号无效,请重新输入或联系管理员(8231 7766),<br/>另请确认你所查询的预约未过期，过期预约信息不允许查询。"));}
 			
 		}
 	}
