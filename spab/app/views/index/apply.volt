@@ -56,7 +56,9 @@
 	var characters=character.split("");
 
 	$("document").ready(function() {
-		alert($("#other").val());
+		if($("#other").val()==""){
+			$("#other").value==" ";
+		}
 		$.post("/index/gettime",function(data){
 			initTable(data);
 		});
