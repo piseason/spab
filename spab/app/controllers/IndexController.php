@@ -158,7 +158,7 @@ class IndexController extends ControllerBase
         $appointment->state=0;
         $applycode=$appliantid.rand(0,9).rand(0,9).rand(0,9).rand(0,9);
         $appointment->applycode=$applycode;
-        $appointment->other=$other;
+        $appointment->other=$other." ";
         $appointment->telephone=$telephone;
         $appointment->signuptime=date("l dS \of F Y T G:i:s A"); 
         try{
