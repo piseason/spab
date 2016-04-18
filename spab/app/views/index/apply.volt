@@ -54,8 +54,9 @@
 	var appoints = new Array();
 	var character="日一二三四五六";
 	var characters=character.split("");
-	$("#other").val("");
+
 	$("document").ready(function() {
+		alert($("#other").val());
 		$.post("/index/gettime",function(data){
 			initTable(data);
 		});
