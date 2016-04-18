@@ -65,7 +65,7 @@ class CheckoutController extends ControllerBase{
 			$this->dataReturn(array("url"=>"/checkout/access"));
 		}else{
 			$appointment=Deniedappointments::findFirst(array(
-				"applycode=?1",
+				"appliantid=?1",
 				"bind"=>array(1=>$applycode)
 			));
 			if($appointment){
